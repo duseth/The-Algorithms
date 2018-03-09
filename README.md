@@ -14,8 +14,7 @@ In computer systems, an algorithm is basically an instance of logic written in s
 ##### Source: [Wikipedia](https://en.wikipedia.org/wiki/Algorithm#Computer_algorithms)
 
 ### Sorting Algorithms.  
-In computer science, a sorting algorithm is an algorithm that puts elements of a list in a certain order. The most-used orders are numerical order and lexicographical order. Efficient sorting is important for optimizing the use of other algorithms (such as search and merge algorithms) which require input data to be in sorted lists; it is also often useful for canonicalizing data and for producing human-readable output.
-
+In computer science, a sorting algorithm is an algorithm that puts elements of a list in a certain order. The most-used orders are numerical order and lexicographical order. Efficient sorting is important for optimizing the use of other algorithms (such as search and merge algorithms) which require input data to be in sorted lists; it is also often useful for canonicalizing data and for producing human-readable output.  
 ##### Source: [Wikipeadia](https://en.wikipedia.org/wiki/Sorting_algorithm)  
 
 #### Bubble Sort.  
