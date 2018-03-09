@@ -1,5 +1,5 @@
 ## The Algorithms.
-![front-image](https://ibb.co/dLsedS)
+![front-image](https://image.ibb.co/eUJKdS/Algorithms_In_Computer_Science.jpg)
 ### Some information about the repository.
 All algorithms are implemented on Python. For the execution of algorithms, the standard Python library version 3.6 is required. These algorithms are need for practice Python, a better understanding of algorithms and education the programming.
 ### What is Algorithms?
