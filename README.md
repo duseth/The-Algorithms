@@ -20,7 +20,9 @@ In computer science, a sorting algorithm is an algorithm that puts elements of a
 
 #### Bubble Sort.  
 Bubble sort, sometimes referred to as sinking sort, is a simple sorting algorithm that repeatedly steps through the list to be sorted, compares each pair of adjacent items and swaps them if they are in the wrong order. The pass through the list is repeated until no swaps are needed, which indicates that the list is sorted.  
-![Visualization of bubble sort](https://upload.wikimedia.org/wikipedia/commons/c/c8/Bubble-sort-example-300px.gif)
+##### Visualization of bubble sort.  
+![Visualization of bubble sort](https://upload.wikimedia.org/wikipedia/commons/c/c8/Bubble-sort-example-300px.gif "Visualization of bubble sort")  
+##### Source: [Wikipedia](https://en.wikipedia.org/wiki/Bubble_sort)  
 
 > Sincerely, Ilyas Salimov.   
 > Email: ilyas.salimov.07@gmail.com
