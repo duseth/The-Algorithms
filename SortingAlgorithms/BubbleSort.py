@@ -4,7 +4,7 @@
 
 from random import randint                  # Importing randint item in random module.
 n = 10                                      # Amount items in list.
-a = [randint(0, 10) for i in range(n)]      # Filling list of randoms numbers.
+a = [randint(0, n) for i in range(n)]       # Filling list of randoms numbers.
 for i in range(0, n - 1):                   # Passing through in list (n - 1) times.
 	f = 0                                   # Mark for break if list sorted.
 	for j in range(0, n - 1):               # Passing through in list from 0 to (n - 1).
