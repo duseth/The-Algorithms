@@ -24,5 +24,29 @@ Bubble sort, sometimes referred to as sinking sort, is a simple sorting algorith
 ![Visualization of bubble sort](https://upload.wikimedia.org/wikipedia/commons/c/c8/Bubble-sort-example-300px.gif "Visualization of bubble sort")  
 ##### Source: [Wikipedia](https://en.wikipedia.org/wiki/Bubble_sort)  
 
+#### Insertion Sort.  
+Insertion sort is a simple sorting algorithm that builds the final sorted array (or list) one item at a time. It is much less efficient on large lists than more advanced algorithms such as quicksort, heapsort, or merge sort. 
+##### Visualization of insertion sort.  
+![Visualization of insertion sort](https://upload.wikimedia.org/wikipedia/commons/0/0f/Insertion-sort-example-300px.gif "Visualization of insertion sort")  
+##### Source: [Wikipedia](https://en.wikipedia.org/wiki/Insertion_sort)  
+
+#### Gnome Sort.  
+It is a sorting algorithm which is similar to insertion sort, except that moving an element to its proper place is accomplished by a series of swaps, as in bubble sort. It is conceptually simple, requiring no nested loops.
+##### Visualization of gnome sort.  
+![Visualization of gnome sort](https://upload.wikimedia.org/wikipedia/commons/3/37/Sorting_gnomesort_anim.gif "Visualization of gnome sort")    
+##### Source: [Wikipedia](https://en.wikipedia.org/wiki/Gnome_sort)  
+
+#### Cocktail Sort.  
+Cocktail shaker sort,[1] also known as bidirectional bubble sort, cocktail sort, shaker sort (which can also refer to a variant of selection sort), ripple sort, shuffle sort, or shuttle sort, is a variation of bubble sort that is both a stable sorting algorithm and a comparison sort. 
+##### Visualization of cocktail sort.  
+![Visualization of cocktail sort](https://upload.wikimedia.org/wikipedia/commons/e/ef/Sorting_shaker_sort_anim.gif "Visualization of cocktail sort")  
+##### Source: [Wikipedia](https://en.wikipedia.org/wiki/Cocktail_sort) 
+
+#### Merge Sort.  
+Insertion sort is a simple sorting algorithm that builds the final sorted array (or list) one item at a time. It is much less efficient on large lists than more advanced algorithms such as quicksort, heapsort, or merge sort. 
+##### Visualization of merge sort.  
+![Visualization of merge sort](https://upload.wikimedia.org/wikipedia/commons/c/cc/Merge-sort-example-300px.gif "Visualization of merge sort")  
+##### Source: [Wikipedia](https://en.wikipedia.org/wiki/Merge_sort)  
+
 > Sincerely, Ilyas Salimov.   
 > Email: ilyas.salimov.07@gmail.com
