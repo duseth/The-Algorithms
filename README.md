@@ -1,5 +1,5 @@
 ## The Algorithms.
-![front-image](https://www.annalect.com/wp-content/uploads/2017/07/06160613/marketing_algorithms_annalect.png)
+![front-image](https://ibb.co/dLsedS)
 ### Some information about the repository.
 All algorithms are implemented on Python. For the execution of algorithms, the standard Python library version 3.6 is required. These algorithms are need for practice Python, a better understanding of algorithms and education the programming.
 ### What is Algorithms?
