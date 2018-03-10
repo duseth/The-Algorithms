@@ -47,5 +47,17 @@ Insertion sort is a simple sorting algorithm that builds the final sorted array 
 ![Visualization of merge sort](https://upload.wikimedia.org/wikipedia/commons/c/cc/Merge-sort-example-300px.gif "Visualization of merge sort")  
 ##### Source: [Wikipedia](https://en.wikipedia.org/wiki/Merge_sort)  
 
+#### Selection Sort.  
+In computer science, selection sort is a sorting algorithm, specifically an in-place comparison sort. It has O(n2) time complexity, making it inefficient on large lists, and generally performs worse than the similar insertion sort. Selection sort is noted for its simplicity, and it has performance advantages over more complicated algorithms in certain situations, particularly where auxiliary memory is limited.
+##### Visualization of selection sort.  
+![Visualization of selection sort](https://upload.wikimedia.org/wikipedia/commons/9/94/Selection-Sort-Animation.gif "Visualization of selection sort")  
+##### Source: [Wikipedia](https://en.wikipedia.org/wiki/Selection_sort)  
+
+#### Shell Sort.  
+Shellsort, also known as Shell sort or Shell's method, is an in-place comparison sort. It can be seen as either a generalization of sorting by exchange (bubble sort) or sorting by insertion (insertion sort).
+##### Visualization of shell sort.  
+![Visualization of shell sort](https://upload.wikimedia.org/wikipedia/commons/d/d8/Sorting_shellsort_anim.gif "Visualization of shell sort")  
+##### Source: [Wikipedia](https://en.wikipedia.org/wiki/Shell_sort) 
+
 > Sincerely, Ilyas Salimov.   
 > Email: ilyas.salimov.07@gmail.com
