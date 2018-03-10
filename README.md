@@ -59,5 +59,14 @@ Shellsort, also known as Shell sort or Shell's method, is an in-place comparison
 ![Visualization of shell sort](https://upload.wikimedia.org/wikipedia/commons/d/d8/Sorting_shellsort_anim.gif "Visualization of shell sort")  
 ##### Source: [Wikipedia](https://en.wikipedia.org/wiki/Shell_sort) 
 
+### Searching Algorithms.  
+In computer science, a search algorithm is any algorithm which solves the search problem, namely, to retrieve information stored within some data structure, or calculated in the search space of a problem domain. Examples of such structures include but are not limited to a linked list, an array data structure, or a search tree. The appropriate search algorithm often depends on the data structure being searched, and may also include prior knowledge about the data. Searching also encompasses algorithms that query the data structure, such as the SQL SELECT command. 
+##### Source: [Wikipeadia](https://en.wikipedia.org/wiki/Search_algorithm)  
+
+#### Linear Search.  
+In computer science, linear search or sequential search is a method for finding a target value within a list. It sequentially checks each element of the list for the target value until a match is found or until all the elements have been searched.  
+![Visualization of linear search](http://kvodo.ru/wp-content/uploads/2017/11/line_search.gif "Visualization of linear search")  
+##### Source: [Wikipedia](https://en.wikipedia.org/wiki/Linear_search)  
+
 > Sincerely, Ilyas Salimov.   
 > Email: ilyas.salimov.07@gmail.com
