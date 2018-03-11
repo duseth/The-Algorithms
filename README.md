@@ -66,7 +66,7 @@ In computer science, a search algorithm is any algorithm which solves the search
 #### Linear Search.  
 In computer science, linear search or sequential search is a method for finding a target value within a list. It sequentially checks each element of the list for the target value until a match is found or until all the elements have been searched.  
 ##### Visualization of linear search. 
-![Visualization of linear search](http://kvodo.ru/wp-content/uploads/2017/11/line_search.gif "Visualization of linear search")  
+![Visualization of linear search](https://www.tutorialspoint.com/data_structures_algorithms/images/linear_search.gif "Visualization of linear search")  
 ##### Source: [Wikipedia](https://en.wikipedia.org/wiki/Linear_search)  
 
 > Sincerely, Ilyas Salimov.   
