@@ -5,7 +5,7 @@
 from random import randint   # Importing randint item in random module.
 n = randint(0, 25)           # Choice random length of list.
 a = [i for i in range(0, n)] # Filling list from 0 to n numbers.
-x, r = randint(0, n), 0      # Create random numbers for searching and result variable.
+x, r = randint(0, n - 1), -1 # Create random numbers for searching and result variable.
 i, u = 0, len(a)		     # Create start and finish position in list.
 while i != u:	             # Passing through in list.
 	c = (i + u) // 2         # To divide list in 2 halfs.
