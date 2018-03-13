@@ -78,8 +78,8 @@ In computer science, binary search, also known as half-interval search, logarith
 #### Interpolation Search.  
 Interpolation search is an algorithm for searching for a given key in an indexed array that has been ordered by numerical values assigned to the keys (key values). It parallels how humans search through a telephone book for a particular name, the key value by which the book's entries are ordered. In each search step it calculates where in the remaining search space the sought item might be, based on the key values at the bounds of the search space and the value of the sought key, usually via a linear interpolation. The key value actually found at this estimated position is then compared to the key value being sought. If it is not equal, then depending on the comparison, the remaining search space is reduced to the part before or after the estimated position. This method will only work if calculations on the size of differences between key values are sensible.
 ##### Visualization of interpolation search. 
-![Visualization of interpolation search](http://www.stoimen.com/blog/wp-content/uploads/2012/01/InterpolationSearchfig.1.png "Visualization of interpolation search")  
-![Visualization of interpolation search](http://www.stoimen.com/blog/wp-content/uploads/2012/01/InterpolationSearchfig.2.png "Visualization of interpolation search")  
+![Visualization of interpolation search](https://image.ibb.co/b6OFsx/Interpolation_Searchfig_1.png "Visualization of interpolation search")  
+![Visualization of interpolation search](https://image.ibb.co/efwDec/Interpolation_Searchfig_2.png "Visualization of interpolation search")  
 ##### Source: [Wikipedia](https://en.wikipedia.org/wiki/Interpolation_search)  
 
 > Sincerely, Ilyas Salimov.   
