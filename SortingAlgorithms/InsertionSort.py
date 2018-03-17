@@ -19,7 +19,7 @@ def visualization():
 	a = [randint(0, n) for i in range(n)]       # Filling list of randoms numbers.
 	print("Initial list:", a)                   # Printing initial list.
 	print("Visualization of algorithm work.")   # Printing decription.
-	a, i = insertionsort(a, n)                     # Sorting list.
+	a, i = insertionsort(a, n)                  # Sorting list.
 	print("Final list:", a)                     # Printing final list.
 	print("Total numbers of passages:", i)      # Printing numbers of passages.
 
