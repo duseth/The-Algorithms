@@ -83,4 +83,4 @@ Interpolation search is an algorithm for searching for a given key in an indexed
 ##### Source: [Wikipedia](https://en.wikipedia.org/wiki/Interpolation_search)  
 
 > Sincerely, Ilyas Salimov.   
-> Email: ilyas.salimov.07@<gmail class="com"></gmail>
+> Email: ilyas.salimov.07@gmail.com
