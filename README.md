@@ -82,5 +82,15 @@ Interpolation search is an algorithm for searching for a given key in an indexed
 ![Visualization of interpolation search](https://image.ibb.co/efwDec/Interpolation_Searchfig_2.png "Visualization of interpolation search")  
 ##### Source: [Wikipedia](https://en.wikipedia.org/wiki/Interpolation_search)  
 
+### Cryprography Algorithms.  
+Cryptography is the practice and study of techniques for secure communication in the presence of third parties called adversaries. More generally, cryptography is about constructing and analyzing protocols that prevent third parties or the public from reading private messages; various aspects in information security such as data confidentiality, data integrity, authentication, and non-repudiation are central to modern cryptography. Modern cryptography exists at the intersection of the disciplines of mathematics, computer science, electrical engineering, communication science, and physics. Applications of cryptography include electronic commerce, chip-based payment cards, digital currencies, computer passwords, and military communications.
+##### Source: [Wikipeadia](https://en.wikipedia.org/wiki/Cryptography)  
+
+#### RSA.  
+RSA (Rivest–Shamir–Adleman) is one of the first public-key cryptosystems and is widely used for secure data transmission. In such a cryptosystem, the encryption key is public and it is different from the decryption key which is kept secret (private). In RSA, this asymmetry is based on the practical difficulty of the factorization of the product of two large prime numbers, the "factoring problem". The acronym RSA is made of the initial letters of the surnames of Ron Rivest, Adi Shamir, and Leonard Adleman, who first publicly described the algorithm in 1978. Clifford Cocks, an English mathematician working for the British intelligence agency Government Communications Headquarters (GCHQ), had developed an equivalent system in 1973, but this was not declassified until 1997.   
+##### Visualization of RSA. 
+![Visualization of RSA](https://image.ibb.co/kJfYFS/Crypto_Fig05b.jpg "Visualization of RSA")  
+##### Source: [Wikipedia](https://en.wikipedia.org/wiki/RSA_(cryptosystem))  
+
 > Sincerely, Ilyas Salimov.  
 > Email: ilyas.salimov.07@gmail.com  
