@@ -36,7 +36,7 @@ It is a sorting algorithm which is similar to insertion sort, except that moving
 ##### Source: [Wikipedia](https://en.wikipedia.org/wiki/Gnome_sort)  
 
 #### Cocktail Sort.  
-Cocktail shaker sort,[1] also known as bidirectional bubble sort, cocktail sort, shaker sort (which can also refer to a variant of selection sort), ripple sort, shuffle sort, or shuttle sort, is a variation of bubble sort that is both a stable sorting algorithm and a comparison sort. 
+Cocktail shaker sort, also known as bidirectional bubble sort, cocktail sort, shaker sort (which can also refer to a variant of selection sort), ripple sort, shuffle sort, or shuttle sort, is a variation of bubble sort that is both a stable sorting algorithm and a comparison sort. 
 ##### Visualization of cocktail sort.  
 ![Visualization of cocktail sort](https://upload.wikimedia.org/wikipedia/commons/e/ef/Sorting_shaker_sort_anim.gif "Visualization of cocktail sort")  
 ##### Source: [Wikipedia](https://en.wikipedia.org/wiki/Cocktail_sort) 
