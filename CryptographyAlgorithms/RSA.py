@@ -98,18 +98,18 @@ def encoding_mode():
 def decoding_mode():
 	"""Function for working decoding mode."""
 	global text, close_key, cipher_list                                                      # Identify global variables.
-	import timeit                 															 # Importing timeit module.
+	import timeit                                                                            # Importing timeit module.
 	print("\n » Decoding mode activated! « (~˘▾˘)~")                                         # Printing header.
-	try:																					 # Exception construction start.
+	try:                                                                                     # Exception construction start.
 		cipher_list = input("[+] Enter your cipher list - ")                                 # Input string.
 		cipher_list = list(map(int, cipher_list[1:len(cipher_list) - 1].split(",")))         # Creating list of string and passing through for use int() for every item.
-	except: 																				 # Exception handling.
+	except:                                                                                  # Exception handling.
 		print("[x] Invalid input! For example: \"[1, 2, 3, 4, 5]\".")                        # Printing information to user.
-		raise SystemExit																     # Exit program.
+		raise SystemExit                                                                     # Exit program.
 	close_key = tuple(map(int, str(input("[+] Enter your close key - ")).split(",")))        # Input user close key.
 	decoding_performance = "%.5f" % timeit.timeit(decoding, number = 1)                      # Counting decoding elapse time.
-	print("\n »» The result of decoding by RSA algorithm. ««") 								 # Printing decoding result header.
-	print(text) 																			 # Printing decoding result.
+	print("\n »» The result of decoding by RSA algorithm. ««")                               # Printing decoding result header.
+	print(text)                                                                              # Printing decoding result.
 	print("\n[~] RSA algorithm decoding performance - {} sec.".format(decoding_performance)) # Printing decoding performance.
 
 def menu():
@@ -121,14 +121,14 @@ def menu():
 		print("[x] Invalid input! For example: \"0, 1, 2\".")                      # Printing information to user.
 		raise SystemExit                                                           # Exit program.
 	if id == 0:                                                                    # If user choiced demonstation mode then
-		demonstration_mode() 													   # - calling demonstration_mode().
-	elif id == 1: 																   # Else if user choiced encoding mode then
-		encoding_mode() 														   # - calling encoding_mode().
-	elif id == 2:																   # Else if user choiced decoding mode then 
-		decoding_mode() 														   # - calling decoding_mode().
+		demonstration_mode()                                                       # - calling demonstration_mode().
+	elif id == 1:                                                                  # Else if user choiced encoding mode then
+		encoding_mode()                                                            # - calling encoding_mode().
+	elif id == 2:                                                                  # Else if user choiced decoding mode then 
+		decoding_mode()                                                            # - calling decoding_mode().
 	else:                                                                          # Else then 
 		print("[x] Invalid input! You can only select: \"0, 1, 2\".")              # - printing information to user.
 		raise SystemExit                                                           # - exit program.
 
 open_key, close_key, text, cipher_list = (), (), "", [] # Creating global variables.
-menu() 													# Starting program.
+menu()                                                  # Starting program.
