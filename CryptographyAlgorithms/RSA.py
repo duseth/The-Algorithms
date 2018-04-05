@@ -102,10 +102,10 @@ def decoding_mode():
 	print("\n » Decoding mode activated! « (~˘▾˘)~")                                         # Printing header.
 	try:                                                                                     # Exception construction start.
 		cipher_list = input("[+] Enter your cipher list - ")                                 # Input string.
-		if cipher_list[0] == "[":
-			cipher_list = list(map(int, cipher_list[1:len(cipher_list) - 1].split(",")))         # Creating list of string and passing through for use int() for every item.
-		else:
-			cipher_list = list(map(int, cipher_list.split(",")))         # Creating list of string and passing through for use int() for every item.
+		if cipher_list[0] == "[":                                                            # Checking on extra signs.
+			cipher_list = list(map(int, cipher_list[1:len(cipher_list) - 1].split(",")))     # Creating list of string and passing through for use int() for every item.
+		else:                                                                                # Condition processing.
+			cipher_list = list(map(int, cipher_list.split(",")))                             # Creating list of string and passing through for use int() for every item.
 	except:                                                                                  # Exception handling.
 		print("[x] Invalid input! For example: \"[1, 2, 3, 4, 5]\".")                        # Printing information to user.
 		raise SystemExit                                                                     # Exit program.
