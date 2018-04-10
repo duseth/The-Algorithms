@@ -51,7 +51,7 @@ def demonstration_mode():
 	"""Function for working demonstration mode."""
 	global text, open_key, close_key, cipher_list                                            # Identify global variables.
 	import timeit                                                                            # Importing timeit module.
-	print("\n » Demonstration mode activated! « ¯\_(ツ)_/¯")                                 # Pringing header.
+	print("\n » Demonstration mode activated! « (~˘▾˘)~")                                 # Pringing header.
 	try:                                                                                     # Exception construction start.
 		text = str(input("[+] Enter your text - "))                                          # Input text.
 		check = text[0]                                                                      # Checking for emptiness.
@@ -75,7 +75,7 @@ def encoding_mode():
 	"""Function for working encoding mode."""
 	global text, open_key, cipher_list                                                       # Identify global variables.
 	import timeit                                                                            # Importing timeit module.
-	print("\n » Encoding mode activated! « (｡◕‿◕｡)")                                         # Printing header.
+	print("\n » Encoding mode activated! « (~˘▾˘)~")                                         # Printing header.
 	try:                                                                                     # Exception construction start.
 		text = str(input("[+] Enter your text - "))                                          # Input text.
 		check = text[0]                                                                      # Checking for emptiness.
@@ -116,7 +116,7 @@ def decoding_mode():
 	print("\n[~] RSA algorithm decoding performance - {} sec.".format(decoding_performance)) # Printing decoding performance.
 
 def menu():
-	print("\t\t✖ Rivest–Shamir–Adleman cryptography algorithm. ✖")                 # Printing header.
+	print("\t\t[x] Rivest–Shamir–Adleman cryptography algorithm. [x]")                 # Printing header.
 	print(" • 0. Demonstration mode.\n • 1. Encoding mode.\n • 2. Decoding mode.") # Print selection menu.
 	try:                                                                           # Exception construction start.
 		id = int(input("[?] Select program mode - "))                              # Input user choice.
