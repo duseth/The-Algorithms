@@ -109,7 +109,11 @@ def decoding_mode():
 	except:                                                                                  # Exception handling.
 		print("[x] Invalid input! For example: \"[1, 2, 3, 4, 5]\".")                        # Printing information to user.
 		raise SystemExit                                                                     # Exit program.
-	close_key = tuple(map(int, str(input("[+] Enter your close key - ")).split(",")))        # Input user close key.
+	close_key = input("[+] Enter your close key - ")                                         # Input close key.
+	if close_key[0] == "[":                                                                  # Checking on extra signs.
+		close_key = tuple(map(int, close_key[1: len(close_key) - 1].split(",")))             # Input user close key.
+	else:                                                                                    # Condition processing.
+		close_key = tuple(map(int, close_key.split(",")))                                    # Input user close key.
 	decoding_performance = "%.5f" % timeit.timeit(decoding, number = 1)                      # Counting decoding elapse time.
 	print("\n »» The result of decoding by RSA algorithm. ««")                               # Printing decoding result header.
 	print(text)                                                                              # Printing decoding result.
