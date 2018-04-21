@@ -23,7 +23,7 @@ def creation_keys():
 	n, f, d = p * q, (p - 1) * (q - 1), 0            # Finding n, f, and creating d integer variable for passing through.
 	while (not prime(e)) or (e > f) or (f % e == 0): # Finding e such that: (e is prime) or (e less f) or (f was not divisble e). 
 		e += 1                                       # Increment i for passing.
-	while (d * e) % f != 1:                          # Fingind d such thah: (d * e) mod f == 1.
+	while (d * e) % f != 1:                          # Fingind d such that: (d * e) mod f == 1.
 		d += 1                                       # Increment d for passing.
 	return (e, n), (d, n)                            # Return open and close keys.
 
