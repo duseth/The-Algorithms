@@ -63,7 +63,7 @@ Shellsort, also known as Shell sort or Shell's method, is an in-place comparison
 Bucket sort, or bin sort, is a sorting algorithm that works by distributing the elements of an array into a number of buckets. Each bucket is then sorted individually, either using a different sorting algorithm, or by recursively applying the bucket sorting algorithm.  
 ##### Visualization of bucket sort.  
 ![Visualization of bucket sort](http://sorting.valemak.com/wp-content/uploads/2013/12/sort_bucket.gif "Visualization of bucket sort")  
-##### Source: [Wikipedia](https://en.wikipedia.org/wiki/Bucket_sortsort) 
+##### Source: [Wikipedia](https://en.wikipedia.org/wiki/Bucket_sort) 
 
 ### Searching Algorithms.  
 In computer science, a search algorithm is any algorithm which solves the search problem, namely, to retrieve information stored within some data structure, or calculated in the search space of a problem domain. Examples of such structures include but are not limited to a linked list, an array data structure, or a search tree. The appropriate search algorithm often depends on the data structure being searched, and may also include prior knowledge about the data. Searching also encompasses algorithms that query the data structure, such as the SQL SELECT command. 
