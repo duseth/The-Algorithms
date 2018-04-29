@@ -2,6 +2,17 @@
 # Implemented on Python 3.5.2
 # My understanding of this algorithm.
 
+"""
+ Further in program will be used alphabetic variables.
+ I will explain the meaning of each of them.
+ They were used for convenience.
+ [p], [q] - two prime numbers.
+ [n] - the product of [p] on [q].
+ [f] - euler function of [n].
+ [e] - an open exponent is such that ([e] is prime) and (e < f) and (f mod e != 0).
+ [d] - an secret exponent is such that (d * e) mod f = 1.
+"""
+
 def isPrime(n):
 	from math import sqrt 
 	i = 2 
@@ -11,7 +22,7 @@ def isPrime(n):
 		i += 1
 	return True 
 
-def creation_keys():	
+def creationKeys():	
 	from random import randint 
 	p, q, e = 10, 10, 4
 	while not isPrime(p):
@@ -49,7 +60,7 @@ def demonstrationMode():
 	except:
 		print("[x] Invalid input! For example: \"hello\".")
 		raise SystemExit 
-	openKey, closeKey = creation_keys()
+	openKey, closeKey = creationKeys()
 	print("[~] Your open key - [{},{}].".format(openKey[0], openKey[1])) 
 	print("[~] Your close key - [{},{}].".format(closeKey[0], closeKey[1]))
 	encoding_performance = "%.5f" % timeit.timeit(encoding, number = 1)
@@ -75,7 +86,7 @@ def encodingMode():
 	print(" • 0. Random open key.\n • 1. Your open key(for experienced).") 
 	key = int(input("[?] Select open key method - "))
 	if key == 0: 
-		openKey, closeKey = creation_keys()
+		openKey, closeKey = creationKeys()
 		print("[~] Your open key - [{},{}].".format(openKey[0], openKey[1])) 
 		print("[~] Your close key - [{},{}].".format(closeKey[0], closeKey[1]))
 	elif key == 1: 
