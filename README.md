@@ -1,4 +1,4 @@
-## The Algorithms.
+## The Algorithms. 
 ![front-image](https://image.ibb.co/eUJKdS/Algorithms_In_Computer_Science.jpg)
 ### Some information about the repository.
 All algorithms are implemented on Python. For the execution of algorithms, the standard Python library version 3.6 is required. These algorithms are need for practice Python, a better understanding of algorithms and education the programming.
@@ -58,6 +58,12 @@ Shellsort, also known as Shell sort or Shell's method, is an in-place comparison
 ##### Visualization of shell sort.  
 ![Visualization of shell sort](https://upload.wikimedia.org/wikipedia/commons/d/d8/Sorting_shellsort_anim.gif "Visualization of shell sort")  
 ##### Source: [Wikipedia](https://en.wikipedia.org/wiki/Shell_sort) 
+
+#### Bucket Sort.  
+Bucket sort, or bin sort, is a sorting algorithm that works by distributing the elements of an array into a number of buckets. Each bucket is then sorted individually, either using a different sorting algorithm, or by recursively applying the bucket sorting algorithm.  
+##### Visualization of bucket sort.  
+![Visualization of bucket sort](http://sorting.valemak.com/wp-content/uploads/2013/12/sort_bucket.gif "Visualization of bucket sort")  
+##### Source: [Wikipedia](https://en.wikipedia.org/wiki/Bucket_sort) 
 
 ### Searching Algorithms.  
 In computer science, a search algorithm is any algorithm which solves the search problem, namely, to retrieve information stored within some data structure, or calculated in the search space of a problem domain. Examples of such structures include but are not limited to a linked list, an array data structure, or a search tree. The appropriate search algorithm often depends on the data structure being searched, and may also include prior knowledge about the data. Searching also encompasses algorithms that query the data structure, such as the SQL SELECT command. 
