@@ -1,37 +1,40 @@
-# ------------------------------
-# Interpolation search algorithm.
-# ------------------------------
+# Ilyas Salimov, 2018
+# Implemented on Python 3.5.2
+# My understanding of this algorithm.
 
-def interpolationsearch(a, x):
-	l, h, r = 0, len(a) - 1, 1                          # Finding start and finish position.
-	while (a[l] <= x) and (a[h] >= x):                  # Passing through in list.
-		m = l + ((x - a[l]) * (h - l)) // (a[h] - a[l]) # Finding middle position in list.
-		if a[m] < x:                                    # If a[m] less x then 
-			l = m + 1                                   # - assign l to (m + 1), 
-			print(" ", [r], "-->", a[l:])               # Printing searching status.
-		elif a[m] > x:                                  # Else if a[m] more x then 
-			h = m - 1                                   # - assign h to (m - 1), 
-			print(" ", [r], "-->", a[:h])               # Printing searching status.
-		else:                                           # Else then 
-			print(" ", [r], "-->", [a[m]])              # Printing searching status.
-			return m, r                                 # - return result.
-	return -1, r
+def interpolationSearch(initialList, target):
+	leftSide, rigthSide, passingCounter = 0, len(initialList) - 1, 1
+	while (initialList[leftSide] <= target) and (initialList[rigthSide] >= target):
+		middlePosition = leftSide + ((target - initialList[leftSide]) * (rigthSide - leftSide)) // (initialList[rigthSide] - initialList[leftSide])
+		if initialList[middlePosition] < target:
+			leftSide = middlePosition + 1
+			print(" ", [passingCounter], "-->", initialList[leftSide:])
+			passingCounter += 1
+		elif initialList[middlePosition] > target:
+			rigthSide = middlePosition - 1
+			print(" ", [passingCounter], "-->", initialList[:rigthSide])
+			passingCounter += 1
+		else:
+			print(" ", [passingCounter], "-->", [initialList[middlePosition]])
+			passingCounter += 1
+			return middlePosition, passingCounter
+	return -1, passingCounter
 
 def visualization():
-	from random import randint                           # Importing randint item in random module.
-	n = 10                                               # Choice random length of list.
-	a = [i for i in range(0, n)]                         # Filling list from 0 to n numbers.
-	x = randint(0, n - 1)                                # Create random numbers for searching.
-	print("Initial list:", a)                            # Printing initial list.
-	print("The number of which must be found:", x)       # Printing searching number.
-	print("Visualization of algorithm work.")            # Printing decription.
-	r, i = interpolationsearch(a, x)                     # Searching number.
-	if r != -1:                                          # If result there is then 
-		print("Result of searching: ", r)                # - printing result,
-	else:										         # Else then 
-		print("This number does not exist in the list.") # - printing that result no exist.
-	print("Total numbers of passages:", i)               # Printing numbers of passages.
+	from random import randint
+	lengthList = 10
+	initialList = [item for item in range(0, lengthList)]
+	target = randint(0, lengthList - 1)
+	print("Initial list:", initialList)
+	print("The number of which must be found:", target)
+	print("Visualization of algorithm work.")
+	searchingResult, passingCounter = interpolationSearch(initialList, target)
+	if searchingResult != -1:
+		print("Result of searching: ", searchingResult)
+	else:
+		print("This number does not exist in the list.")
+	print("Total numbers of passages:", passingCounter)
 
 import timeit
-elapsed_time = timeit.timeit(visualization, number = 1) # Start program and counting elapsed time.
-print("Elapsed time: ", round(elapsed_time, 3), "sec.") # Printing elapsed time.
+elapsedTime = timeit.timeit(visualization, number = 1)
+print("Elapsed time: ", round(elapsedTime, 3), "sec.")

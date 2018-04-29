@@ -1,26 +1,26 @@
-# -----------------------
-# Linear search algorithm.
-# -----------------------
+# Ilyas Salimov, 2018
+# Implemented on Python 3.5.2
+# My understanding of this algorithm.
 
-def linearsearch(a, x):
-	for i in range(0, len(a)):   # Passing through in list.
-		if a[i] == x:            # Searching index of number.
-			return i             # Return result.
+def linearSearch(initialList, target):
+	for index in range(0, len(initialList)):
+		if initialList[index] == target:
+			return index
 	return -1
 
 def visualization():
-	from random import randint                           # Importing randint item in random module.
-	n = 10                                               # Choice random length of list.
-	a = [randint(0, n) for i in range(0, n)]             # Filling list from 0 to n numbers.
-	x = randint(0, n - 1)                                # Create random numbers for searching.
-	print("Initial list:", a)                            # Printing initial list.
-	print("The number of which must be found:", x)       # Printing searching number.
-	r = linearsearch(a, x)                               # Searching number.
-	if r != -1:                                          # If result there is then 
-		print("Result of searching: ", r)                # - printing result,
-	else:										         # Else then 
-		print("This number does not exist in the list.") # - printing that result no exist.
+	from random import randint
+	lengthList = 10
+	initialList = [randint(0, lengthList) for index in range(0, lengthList)]
+	target = randint(0, lengthList - 1)
+	print("Initial list:", initialList)
+	print("The number of which must be found:", target)
+	searchingResult = linearSearch(initialList, target) 
+	if searchingResult != -1:
+		print("Result of searching: ", searchingResult)
+	else:										 
+		print("This number does not exist in the list.")
 
 import timeit
-elapsed_time = timeit.timeit(visualization, number = 1) # Start program and counting elapsed time.
-print("Elapsed time: ", round(elapsed_time, 3), "sec.") # Printing elapsed time.
+elapsedTime = timeit.timeit(visualization, number = 1)
+print("Elapsed time: ", round(elapsedTime, 3), "sec.")

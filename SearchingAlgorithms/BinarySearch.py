@@ -1,40 +1,40 @@
-# -----------------------
-# Binary search algorithm.
-# -----------------------
+# Ilyas Salimov, 2018
+# Implemented on Python 3.5.2
+# My understanding of this algorithm.
 
-def binarysearch(a, x):
-	i, u, r = 0, len(a), 1	                # Create start and finish position in list.
-	while i != u:	                        # Passing through in list.
-		c = (i + u) // 2                    # To divide list in 2 halfs.
-		if x == a[c]:                       # Checking finding x if true then 
-			print(" ", [r], "-->", [a[c]])  # - printing searching status.
-			r += 1
-			return c, r                     #  - return result.
-		elif x < a[c]:                      # Else if x less a[c] then 
-			u = c                           # - finish position variable equals c.
-			print(" ", [r], "-->", a[:u])   # - printing searching status.
-			r += 1
-		else:                               # Else then 
-			i = c + 1                       # - start position equals (c + 1).
-			print(" ", [r], "-->", a[i:])   # - printing searching status.
-			r += 1
-	return -1, r
+def binarySearch(initialList, target):
+	leftSide, rigthtSide, passingCounter = 0, len(initialList), 1
+	while leftSide != rigthtSide:	
+		c = (leftSide + rigthtSide) // 2
+		if target == initialList[c]:
+			print(" ", [passingCounter], "-->", [initialList[c]])
+			passingCounter += 1
+			return c, passingCounter
+		elif target < initialList[c]:
+			rigthtSide = c
+			print(" ", [passingCounter], "-->", initialList[:rigthtSide])
+			passingCounter += 1
+		else: 
+			leftSide = c + 1
+			print(" ", [passingCounter], "-->", initialList[leftSide:])
+			passingCounter += 1
+	return -1, passingCounter
 
 def visualization():
-	from random import randint                           # Importing randint item in random module.
-	n = 10                                               # Choice random length of list.
-	a = [i for i in range(0, n)]                         # Filling list from 0 to n numbers.
-	x = randint(0, n - 1)                                # Create random numbers for searching.
-	print("Initial list:", a)                            # Printing initial list.
-	print("The number of which must be found:", x)       # Printing searching number.
-	print("Visualization of algorithm work.")            # Printing decription.
-	r, i = binarysearch(a, x)                            # Searching number.
-	if r != -1:                                          # If result there is then 
-		print("Result of searching: ", r)                # - printing result,
-	else:										         # Else then 
-		print("This number does not exist in the list.") # - printing that result no exist.
-	print("Total numbers of passages:", i)               # Printing numbers of passages.
+	from random import randint
+	lengthList = 10 
+	initialList = [leftSide for leftSide in range(0, lengthList)]
+	target = randint(0, lengthList - 1)
+	print("Initial list:", initialList)
+	print("The number of which must be found:", target)
+	print("Visualization of algorithm work.")
+	searchingResult, passingCounter = binarySearch(initialList, target)
+	if searchingResult != -1:
+		print("Result of searching:", searchingResult)
+	else:
+		print("This number does not exist in the list.")
+	print("Total numbers of passages:", passingCounter)
 
 import timeit
-elapsed_time = timeit.timeit(visualization, number = 1) # Start program and counting elapsed time.
-print("Elapsed time: ", round(elapsed_time, 3), "sec.") # Printing elapsed time.
+elapsedTime = timeit.timeit(visualization, number = 1)
+print("Elapsed time: ", round(elapsedTime, 3), "sec.")
