@@ -17,7 +17,7 @@ def bucketSort(initialList, lengthList):
 def visualization():
 	from random import randint
 	lengthList = 10
-	initialList = [randint(0, lengthList) for insideIndex in range(lengthList)]
+	initialList = [randint(0, lengthList) for item in range(lengthList)]
 	print("Initial list:", initialList)
 	print("Visualization of algorithm work.")
 	initialList = bucketSort(initialList, lengthList)
