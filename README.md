@@ -65,6 +65,12 @@ Bucket sort, or bin sort, is a sorting algorithm that works by distributing the 
 ![Visualization of bucket sort](http://sorting.valemak.com/wp-content/uploads/2013/12/sort_bucket.gif "Visualization of bucket sort")  
 ##### Source: [Wikipedia](https://en.wikipedia.org/wiki/Bucket_sort) 
 
+#### Quick Sort.  
+Quicksort (sometimes called partition-exchange sort) is an efficient sorting algorithm, serving as a systematic method for placing the elements of an array in order. Developed by Tony Hoare in 1959 and published in 1961, it is still a commonly used algorithm for sorting.
+##### Visualization of quick sort.  
+![Visualization of quick sort](https://upload.wikimedia.org/wikipedia/commons/6/6a/Sorting_quicksort_anim.gif "Visualization of quick sort")  
+##### Source: [Wikipedia](https://en.wikipedia.org/wiki/Quicksort) 
+
 ### Searching Algorithms.  
 In computer science, a search algorithm is any algorithm which solves the search problem, namely, to retrieve information stored within some data structure, or calculated in the search space of a problem domain. Examples of such structures include but are not limited to a linked list, an array data structure, or a search tree. The appropriate search algorithm often depends on the data structure being searched, and may also include prior knowledge about the data. Searching also encompasses algorithms that query the data structure, such as the SQL SELECT command. 
 ##### Source: [Wikipeadia](https://en.wikipedia.org/wiki/Search_algorithm)  
