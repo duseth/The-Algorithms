@@ -20,7 +20,7 @@ def isPrime(n):
 		if n % i == 0:
 			return False
 		i += 1
-	return True 
+	return True
 
 def creationKeys():	
 	from random import randint 
@@ -55,7 +55,7 @@ def demonstrationMode():
 	import timeit
 	print("\n » Demonstration mode activated! « (~˘▾˘)~")
 	try: 
-		textString = str(input("[+] Enter your textString - "))
+		textString = str(input("[+] Enter your text - "))
 		checking = textString[0]
 	except:
 		print("[x] Invalid input! For example: \"hello\".")
@@ -63,38 +63,38 @@ def demonstrationMode():
 	openKey, closeKey = creationKeys()
 	print("[~] Your open key - [{},{}].".format(openKey[0], openKey[1])) 
 	print("[~] Your close key - [{},{}].".format(closeKey[0], closeKey[1]))
-	encoding_performance = "%.5f" % timeit.timeit(encoding, number = 1)
+	encodingPerformance = "%.5f" % timeit.timeit(encoding, number = 1)
 	print("\n »» The result of encoding by RSA algorithm. ««") 
 	print(cipherList) 
 	textString = ""
 	decoding_performance = "%.5f" % timeit.timeit(decoding, number = 1)
 	print("\n »» The result of decoding by RSA algorithm. ««") 
 	print(textString)
-	print("\n[~] RSA algorithm encoding performance - {} sec.".format(encoding_performance)) 
+	print("\n[~] RSA algorithm encoding performance - {} sec.".format(encodingPerformance)) 
 	print("[~] RSA algorithm decoding performance - {} sec.".format(decoding_performance)) 
 
 def encodingMode():
-	global textString, openKey, cipherList 
+	global textString, openKey, cipherList
 	import timeit
-	print("\n » Encoding mode activated! « (~˘▾˘)~") 
-	try: 
-		textString = str(input("[+] Enter your textString - "))
+	print("\n » Encoding mode activated! « (~˘▾˘)~")
+	try:
+		textString = str(input("[+] Enter your text - "))
 		checking = textString[0]
-	except:
+	except IndexError:
 		print("[x] Invalid input! For example: \"hello\".")
-		raise SystemExit 
-	print(" • 0. Random open key.\n • 1. Your open key(for experienced).") 
+		raise SystemExit
+	print(" • 0. Random open key.\n • 1. Your open key(for experienced).")
 	key = int(input("[?] Select open key method - "))
-	if key == 0: 
+	if key == 0:
 		openKey, closeKey = creationKeys()
-		print("[~] Your open key - [{},{}].".format(openKey[0], openKey[1])) 
+		print("[~] Your open key - [{},{}].".format(openKey[0], openKey[1]))
 		print("[~] Your close key - [{},{}].".format(closeKey[0], closeKey[1]))
-	elif key == 1: 
+	elif key == 1:
 		openKey = tuple(map(int, str(input("[+] Enter your open key - ")).split(",")))
-	encoding_performance = "%.5f" % timeit.timeit(encoding, number = 1)
-	print("\n »» The result of encoding by RSA algorithm. ««") 
-	print(cipherList) 
-	print("\n[~] RSA algorithm encoding performance - {} sec.".format(encoding_performance)) 
+	encodingPerformance = "%.5f" % timeit.timeit(encoding, number = 1)
+	print("\n »» The result of encoding by RSA algorithm. ««")
+	print(cipherList)
+	print("\n[~] RSA algorithm encoding performance - {} sec.".format(encodingPerformance))
 
 def decodingMode():
 	global textString, closeKey, cipherList
