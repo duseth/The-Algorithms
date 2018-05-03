@@ -104,5 +104,17 @@ RSA (Rivest–Shamir–Adleman) is one of the first public-key cryptosystems and
 ![Visualization of RSA](https://image.ibb.co/kJfYFS/Crypto_Fig05b.jpg "Visualization of RSA")  
 ##### Source: [Wikipedia](https://en.wikipedia.org/wiki/RSA_(cryptosystem))  
 
+#### Caesar cipher.  
+In cryptography, a Caesar cipher, also known as Caesar's cipher, the shift cipher, Caesar's code or Caesar shift, is one of the simplest and most widely known encryption techniques. It is a type of substitution cipher in which each letter in the plaintext is replaced by a letter some fixed number of positions down the alphabet.   
+##### Visualization of Caesar cipher. 
+![Visualization of Caesar cipher](https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Caesar_cipher_left_shift_of_3.svg/856px-Caesar_cipher_left_shift_of_3.svg.png "Visualization of Caesar cipher")  
+##### Source: [Wikipedia](https://en.wikipedia.org/wiki/Caesar_cipher)  
+
+#### Gronsfeld cipher.  
+The Gronsfeld cipher is a variant created by Count Gronsfeld which is identical to the Vigenère cipher, except that it uses just 10 different cipher alphabets (corresponding to the digits 0 to 9). The Gronsfeld cipher is strengthened because its key is not a word, but it is weakened because it has just 10 cipher alphabets. Gronsfeld's cipher did become widely used throughout Germany and Europe, despite its weaknesses.  
+##### Visualization of Gronsfeld cipher. 
+![Visualization of Gronsfeld cipher](https://www.cryptool.org/images/gronsfeldEN.jpg "Visualization of Gronsfeld cipher")  
+##### Source: [Wikipedia](https://en.wikipedia.org/wiki/Caesar_cipher)  
+
 > Sincerely, Ilyas Salimov.  
 > Email: ilyas.salimov.07@gmail.com  
