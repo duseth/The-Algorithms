@@ -114,7 +114,25 @@ In cryptography, a Caesar cipher, also known as Caesar's cipher, the shift ciphe
 The Gronsfeld cipher is a variant created by Count Gronsfeld which is identical to the Vigenère cipher, except that it uses just 10 different cipher alphabets (corresponding to the digits 0 to 9). The Gronsfeld cipher is strengthened because its key is not a word, but it is weakened because it has just 10 cipher alphabets. Gronsfeld's cipher did become widely used throughout Germany and Europe, despite its weaknesses.  
 ##### Visualization of Gronsfeld cipher. 
 ![Visualization of Gronsfeld cipher](https://www.cryptool.org/images/gronsfeldEN.jpg "Visualization of Gronsfeld cipher")  
-##### Source: [Wikipedia](https://en.wikipedia.org/wiki/Caesar_cipher)  
+##### Source: [Wikipedia](https://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher)  
+
+#### Morse code.  
+Morse code is a method of transmitting text information as a series of on-off tones, lights, or clicks that can be directly understood by a skilled listener or observer without special equipment. It is named for Samuel F. B. Morse, an inventor of the telegraph. The International Morse Code encodes the ISO basic Latin alphabet, some extra Latin letters, the Arabic numerals and a small set of punctuation and procedural signals (prosigns) as standardized sequences of short and long signals called "dots" and "dashes", or "dits" and "dahs", as in amateur radio practice. 
+##### Visualization of Morse code. 
+![Visualization of Morse code](https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Morse_code_tree3.png/650px-Morse_code_tree3.png "Visualization of Morse code")  
+##### Source: [Wikipedia](https://en.wikipedia.org/wiki/Morse_code)  
+
+#### Vigenere cipher.  
+The Vigenère cipher is a method of encrypting alphabetic text by using a series of interwoven Caesar ciphers based on the letters of a keyword. It is a form of polyalphabetic substitution.
+##### Visualization of Vigenere cipher.  
+![Visualization of MVigenere cipher](https://pages.mtu.edu/~shene/NSF-4/Tutorial/VIG/FIG-VIG-Table.jpg "Visualization of Vigenere cipher")  
+##### Source: [Wikipedia](https://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher)  
+
+#### Polybius Square cipher.  
+In cryptography, the Polybius square, also known as the Polybius checkerboard, is a device invented by the Ancient Greek historian and scholar Polybius, for fractionating plaintext characters so that they can be represented by a smaller set of symbols.  
+##### Visualization of Polybius Square cipher. 
+![Visualization of Polybius Square cipher](http://www.rimwe.com/_Media/polybius_square_med.jpeg "Visualization of Polybius Square cipher")  
+##### Source: [Wikipedia](https://en.wikipedia.org/wiki/Polybius_square) 
 
 > Sincerely, Ilyas Salimov.  
 > Email: ilyas.salimov.07@gmail.com  

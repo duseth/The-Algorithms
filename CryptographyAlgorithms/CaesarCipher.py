@@ -71,7 +71,7 @@ def main():
 	try:
 		mode = int(input("[?] Select program mode - "))
 	except:
-		print("[x] Invalid input! For example: \"1, 2, 3\".")
+		print("[x] Invalid input! For example: \"1, 2\".")
 		raise SystemExit 
 	if mode == 0:
 		encryptionMode()
