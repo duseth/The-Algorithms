@@ -125,7 +125,7 @@ Morse code is a method of transmitting text information as a series of on-off to
 #### Vigenere cipher.  
 The Vigenère cipher is a method of encrypting alphabetic text by using a series of interwoven Caesar ciphers based on the letters of a keyword. It is a form of polyalphabetic substitution.
 ##### Visualization of Vigenere cipher.  
-![Visualization of MVigenere cipher](https://pages.mtu.edu/~shene/NSF-4/Tutorial/VIG/FIG-VIG-Table.jpg "Visualization of Vigenere cipher")  
+![Visualization of Vigenere cipher](https://pages.mtu.edu/~shene/NSF-4/Tutorial/VIG/FIG-VIG-Table.jpg "Visualization of Vigenere cipher")  
 ##### Source: [Wikipedia](https://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher)  
 
 #### Polybius Square cipher.  
