@@ -75,7 +75,14 @@ Quicksort (sometimes called partition-exchange sort) is an efficient sorting alg
 Comb sort is a relatively simple sorting algorithm originally designed by Włodzimierz Dobosiewicz in 1980. Later it was rediscovered by Stephen Lacey and Richard Box in 1991. Comb sort improves on bubble sort.
 ##### Visualization of comb sort.  
 ![Visualization of comb sort](https://upload.wikimedia.org/wikipedia/commons/4/46/Comb_sort_demo.gif "Visualization of comb sort")  
-##### Source: [Wikipedia](https://en.wikipedia.org/wiki/Comb_sort) 
+##### Source: [Wikipedia](https://en.wikipedia.org/wiki/Comb_sort)  
+
+#### Stooge Sort.  
+Stooge sort is a recursive sorting algorithm. The running time of the algorithm is thus slower compared to efficient sorting algorithms, such as Merge sort, and is even slower than Bubble sort, a canonical example of a fairly inefficient and simple sort. 
+##### Visualization of stooge sort.  
+![Visualization of stooge sort](https://upload.wikimedia.org/wikipedia/commons/f/f8/Sorting_stoogesort_anim.gif "Visualization of stooge sort")  
+##### Source: [Wikipedia](https://en.wikipedia.org/wiki/Stooge_sort)  
+
 
 ### Searching Algorithms.  
 In computer science, a search algorithm is any algorithm which solves the search problem, namely, to retrieve information stored within some data structure, or calculated in the search space of a problem domain. Examples of such structures include but are not limited to a linked list, an array data structure, or a search tree. The appropriate search algorithm often depends on the data structure being searched, and may also include prior knowledge about the data. Searching also encompasses algorithms that query the data structure, such as the SQL SELECT command. 
