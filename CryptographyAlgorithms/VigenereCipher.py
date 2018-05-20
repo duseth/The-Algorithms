@@ -1,7 +1,3 @@
-# Ilyas Salimov, 2018
-# Implemented on Python 3.5.2
-# My understanding of this algorithm.
-
 def encryption():
 	global textString, cipherText, wordKey
 	textString, wordKey, cipherText = textString.upper(), wordKey.upper(), ""
@@ -72,6 +68,7 @@ def main():
 		print("[x] Invalid input! You can only select: \"0, 1\".")
 		raise SystemExit 
 
-textString, cipherText, wordKey = "", "", ""
-import timeit, random, re
-main()
+if __name__ == '__main__':
+	textString, cipherText, wordKey = "", "", ""
+	import timeit, random, re
+	main()

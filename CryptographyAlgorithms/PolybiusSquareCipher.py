@@ -1,7 +1,3 @@
-# Ilyas Salimov, 2018
-# Implemented on Python 3.5.2
-# My understanding of this algorithm.
-
 def codesTable(char):
 	table = {
 	"A":11, "B":21, "C":31, "D":41, "E":51,
@@ -75,6 +71,7 @@ def main():
 		print("[x] Invalid input! You can only select: \"0, 1\".")
 		raise SystemExit 
 
-textString, cipherText = "", ""
-import timeit, random, re
-main()
+if __name__ == '__main__':
+	textString, cipherText = "", ""
+	import timeit, random, re
+	main()

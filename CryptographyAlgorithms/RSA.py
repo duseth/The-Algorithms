@@ -1,9 +1,5 @@
-# Ilyas Salimov, 2018
-# Implemented on Python 3.5.2
-# My understanding of this algorithm.
-
 """
- Further in program will be used alphabetic variables.
+ Further in creationKeys() function will be used alphabetic variables.
  I will explain the meaning of each of them.
  They were used for convenience.
  [p], [q] - two prime numbers.
@@ -70,8 +66,8 @@ def demonstrationMode():
 	decoding_performance = "%.5f" % timeit.timeit(decoding, number = 1)
 	print("\n »» The result of decoding by RSA algorithm. ««") 
 	print(textString)
-	print("\n[~] RSA algorithm encoding performance - {} sec.".format(encodingPerformance)) 
-	print("[~] RSA algorithm decoding performance - {} sec.".format(decoding_performance)) 
+	print("\n[~] RSA algorithm encoding performance - {} sec.".format(encodingPerformance))
+	print("[~] RSA algorithm decoding performance - {} sec.".format(decoding_performance))
 
 def encodingMode():
 	global textString, openKey, cipherList
@@ -137,5 +133,6 @@ def main():
 		print("[x] Invalid input! You can only select: \"0, 1, 2\".")
 		raise SystemExit 
 
-openKey, closeKey, textString, cipherList = (), (), "", [] 
-main()
+if __name__ == '__main__':
+	openKey, closeKey, textString, cipherList = (), (), "", [] 
+	main()
