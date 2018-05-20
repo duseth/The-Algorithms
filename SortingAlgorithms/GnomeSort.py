@@ -1,15 +1,15 @@
-# Ilyas Salimov, 2018
-# Implemented on Python 3.5.2
-# My understanding of this algorithm.
-
-def gnomeSort(initialList, lengthList):
+def gnomeSort(initialList):
+	lengthList = len(initialList)
 	index, supportIndex, passingCounter = 1, 2, 0
 	while index < lengthList:
 		if initialList[index - 1] < initialList[index]:
-			index, supportIndex, passingCounter = supportIndex, supportIndex + 1, passingCounter + 1
+			index, supportIndex = supportIndex, supportIndex + 1
+			passingCounter += 1
 			print(" ", [passingCounter], "-->", initialList)
 		else:
-			initialList[index], initialList[index - 1] = initialList[index - 1], initialList[index]
+			tempValue = initialList[index]
+			initialList[index] = initialList[index - 1]
+			initialList[index - 1] = tempValue
 			index = index - 1
 			if index == 0:
 				index, supportIndex = supportIndex, supportIndex + 1
@@ -21,10 +21,11 @@ def visualization():
 	initialList = [randint(0, lengthList) for index in range(lengthList)]
 	print("Initial list:", initialList)
 	print("Visualization of algorithm work.")
-	initialList, passingCounter = gnomeSort(initialList, lengthList)
+	initialList, passingCounter = gnomeSort(initialList)
 	print("Final list:", initialList)
 	print("Total numbers of passages:", passingCounter)
 
-import timeit
-elapsedTime = timeit.timeit(visualization, number = 1)
-print("Elapsed time: ", round(elapsedTime, 3), "sec.")
+if __name__ == '__main__':
+	import timeit
+	elapsedTime = timeit.timeit(visualization, number = 1)
+	print("Elapsed time: ", round(elapsedTime, 3), "sec.")

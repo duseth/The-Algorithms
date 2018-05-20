@@ -1,15 +1,15 @@
-# Ilyas Salimov, 2018
-# Implemented on Python 3.5.2
-# My understanding of this algorithm.
-
 def partition(initialList, leftSide, rigthSide):
 	pivot = initialList[rigthSide]
 	supportIndex = leftSide
 	for index in range(leftSide, rigthSide):
 		if initialList[index] <= pivot:
-			initialList[supportIndex], initialList[index] = initialList[index], initialList[supportIndex]
+			tempValue = initialList[index]
+			initialList[index] = initialList[supportIndex]
+			initialList[supportIndex] = tempValue
 			supportIndex += 1
-	initialList[supportIndex], initialList[rigthSide] = initialList[rigthSide], initialList[supportIndex]
+	tempValue = initialList[rigthSide]
+	initialList[rigthSide] = initialList[supportIndex]
+	initialList[supportIndex] = tempValue
 	return supportIndex
 
 def quickSort(initialList, leftSide, rigthSide):
@@ -34,6 +34,7 @@ def visualization():
 	print("Final list:", initialList)
 	print("Total numbers of passages:", passingCounter)
 
-import timeit
-elapsedTime = timeit.timeit(visualization, number = 1)
-print("Elapsed time: ", round(elapsedTime, 3), "sec.")
+if __name__ == '__main__':
+	import timeit
+	elapsedTime = timeit.timeit(visualization, number = 1)
+	print("Elapsed time: ", round(elapsedTime, 3), "sec.")

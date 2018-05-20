@@ -5,7 +5,9 @@
 def stoogeSort(initialList, leftSide, rightSide):
 	global passingCounter
 	if initialList[rightSide] < initialList[leftSide]:
-		initialList[rightSide], initialList[leftSide] = initialList[leftSide], initialList[rightSide]
+		tempValue = initialList[leftSide]
+		initialList[leftSide] = initialList[rightSide]
+		initialList[rightSide] = tempValue
 		print([passingCounter], "-->", initialList)
 		passingCounter += 1
 	if (rightSide - leftSide + 1) > 2:
@@ -26,7 +28,8 @@ def visualization():
 	print("Final list:", initialList)
 	print("Total numbers of passages:", passingCounter)
 
-import timeit
-passingCounter = 1
-elapsedTime = timeit.timeit(visualization, number = 1)
-print("Elapsed time: ", round(elapsedTime, 3), "sec.")
+if __name__ == '__main__':
+	import timeit
+	passingCounter = 1
+	elapsedTime = timeit.timeit(visualization, number = 1)
+	print("Elapsed time: ", round(elapsedTime, 3), "sec.")

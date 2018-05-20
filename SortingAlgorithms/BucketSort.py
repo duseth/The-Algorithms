@@ -1,8 +1,5 @@
-# Ilyas Salimov, 2018
-# Implemented on Python 3.5.2
-# My understanding of this algorithm.
-
-def bucketSort(initialList, lengthList):
+def bucketSort(initialList):
+	lengthList = len(initialList)
 	bucketsList = [0 for insideIndex in range(lengthList + 1)]
 	print("  Buckets list before sorting - {}".format(bucketsList))
 	for insideIndex in range(lengthList):
@@ -11,7 +8,8 @@ def bucketSort(initialList, lengthList):
 	counterNumbers = 0
 	for outsideIndex in range(lengthList + 1):
 		for insideIndex in range(bucketsList[outsideIndex]):
-			initialList[counterNumbers], counterNumbers = outsideIndex, counterNumbers + 1
+			initialList[counterNumbers] = outsideIndex
+			counterNumbers += 1
 	return initialList
 
 def visualization():
@@ -20,9 +18,10 @@ def visualization():
 	initialList = [randint(0, lengthList) for item in range(lengthList)]
 	print("Initial list:", initialList)
 	print("Visualization of algorithm work.")
-	initialList = bucketSort(initialList, lengthList)
+	initialList = bucketSort(initialList)
 	print("Final list:", initialList)
 
-import timeit
-elapsedTime = timeit.timeit(visualization, number = 1)
-print("Elapsed time: ", round(elapsedTime, 3), "sec.")
+if __name__ == '__main__':
+	import timeit
+	elapsedTime = timeit.timeit(visualization, number = 1)
+	print("Elapsed time: ", round(elapsedTime, 3), "sec.")

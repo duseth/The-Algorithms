@@ -1,8 +1,5 @@
-# Ilyas Salimov, 2018
-# Implemented on Python 3.5.2
-# My understanding of this algorithm.
-
-def insertionSort(initialList, lengthList):
+def insertionSort(initialList):
+	lengthList = len(initialList)
 	for index in range(0, lengthList):
 		currentValue = initialList[index]
 		currentIndex = index
@@ -19,10 +16,11 @@ def visualization():
 	initialList = [randint(0, lengthList) for index in range(lengthList)]
 	print("Initial list:", initialList)
 	print("Visualization of algorithm work.")
-	initialList, index = insertionSort(initialList, lengthList)
+	initialList, index = insertionSort(initialList)
 	print("Final list:", initialList) 
 	print("Total numbers of passages:", index)
 
-import timeit
-elapsedTime = timeit.timeit(visualization, number = 1)
-print("Elapsed time: ", round(elapsedTime, 3), "sec.")
+if __name__ == '__main__':
+	import timeit
+	elapsedTime = timeit.timeit(visualization, number = 1)
+	print("Elapsed time: ", round(elapsedTime, 3), "sec.")

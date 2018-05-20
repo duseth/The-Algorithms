@@ -1,7 +1,3 @@
-# Ilyas Salimov, 2018
-# Implemented on Python 3.5.2
-# My understanding of this algorithm.
-
 def combSort(initialList):
 	global passingCounter
 	lenghtList = len(initialList)
@@ -12,7 +8,9 @@ def combSort(initialList):
 		swapped = 0
 		for index in range(lenghtList - gap):
 			if initialList[index + gap] < initialList[index]:
-				initialList[index + gap], initialList[index] = initialList[index], initialList[index + gap]
+				tempValue = initialList[index + gap]
+				initialList[index + gap] = initialList[index]
+				initialList[index] = tempValue
 				swapped = 1
 				print([passingCounter], "->", initialList)
 				passingCounter += 1
@@ -30,7 +28,8 @@ def visualization():
 	print("Final list:", initialList)
 	print("Total numbers of passages:", passingCounter)
 
-import timeit
-passingCounter = 1
-elapsedTime = timeit.timeit(visualization, number = 1)
-print("Elapsed time: ", round(elapsedTime, 3), "sec.")
+if __name__ == '__main__':
+	import timeit
+	passingCounter = 1
+	elapsedTime = timeit.timeit(visualization, number = 1)
+	print("Elapsed time: ", round(elapsedTime, 3), "sec.")
