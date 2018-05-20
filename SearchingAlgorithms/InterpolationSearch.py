@@ -1,7 +1,3 @@
-# Ilyas Salimov, 2018
-# Implemented on Python 3.5.2
-# My understanding of this algorithm.
-
 def interpolationSearch(initialList, target):
 	leftSide, rigthSide, passingCounter = 0, len(initialList) - 1, 1
 	while (initialList[leftSide] <= target) and (initialList[rigthSide] >= target):
@@ -35,6 +31,7 @@ def visualization():
 		print("This number does not exist in the list.")
 	print("Total numbers of passages:", passingCounter)
 
-import timeit
-elapsedTime = timeit.timeit(visualization, number = 1)
-print("Elapsed time: ", round(elapsedTime, 3), "sec.")
+if __name__ == '__main__':
+	import timeit
+	elapsedTime = timeit.timeit(visualization, number = 1)
+	print("Elapsed time: ", round(elapsedTime, 3), "sec.")

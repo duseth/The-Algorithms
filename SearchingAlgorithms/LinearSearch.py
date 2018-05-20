@@ -1,7 +1,3 @@
-# Ilyas Salimov, 2018
-# Implemented on Python 3.5.2
-# My understanding of this algorithm.
-
 def linearSearch(initialList, target):
 	for index in range(0, len(initialList)):
 		if initialList[index] == target:
@@ -21,6 +17,7 @@ def visualization():
 	else:										 
 		print("This number does not exist in the list.")
 
-import timeit
-elapsedTime = timeit.timeit(visualization, number = 1)
-print("Elapsed time: ", round(elapsedTime, 3), "sec.")
+if __name__ == '__main__':
+	import timeit
+	elapsedTime = timeit.timeit(visualization, number = 1)
+	print("Elapsed time: ", round(elapsedTime, 3), "sec.")
