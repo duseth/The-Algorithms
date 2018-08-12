@@ -1,29 +1,39 @@
-def shellSort(initialList):
-	lengthList = len(initialList)
-	middlePosition, passingCounter = lengthList // 2, 0
-	while middlePosition > 0:
-		for index in range(0, lengthList - middlePosition):
-			supportIndex = index
-			while (supportIndex >= 0) and (initialList[supportIndex] > initialList[supportIndex + middlePosition]):
-				tempValue = initialList[supportIndex]
-				initialList[supportIndex] = initialList[supportIndex + middlePosition]
-				initialList[supportIndex + middlePosition] = tempValue
-				supportIndex, passingCounter = supportIndex - 1, passingCounter + 1
-				print(" ", [passingCounter], "-->", initialList)
-		middlePosition = middlePosition // 2
-	return initialList, passingCounter
+def shellSort(collection):
+	lengthList = len(collection)
+	middle, counter = lengthList // 2, 0
+
+	while middle > 0:
+		for i in range(0, lengthList - middle):
+			j = i
+			while (j >= 0) and (collection[j] > collection[j + middle]):
+				temp = collection[j]
+				collection[j] = collection[j + middle]
+				collection[j + middle] = temp
+
+				j, counter = j - 1, counter + 1
+				print(" ", [counter], "-->", collection)
+
+		middle = middle // 2
+
+	return collection, counter
 
 def visualization():
 	from random import randint
 	lengthList = 10
-	initialList = [randint(0, lengthList) for index in range(lengthList)]
-	print("Initial list:", initialList)
-	print("Visualization of algorithm work.")
-	initialList, passingCounter = shellSort(initialList)
-	print("Final list:", initialList)
-	print("Total numbers of passages:", passingCounter)
+	collection = [randint(0, lengthList) for i in range(lengthList)]
 
-if __name__ == '__main__':
+	print("Initial list:", collection)
+	print("Visualization of algorithm work.")
+
+	collection, counter = shellSort(collection)
+
+	print("Final list:", collection)
+	print("Total numbers of passages:", counter)
+
+def main():
 	import timeit
 	elapsedTime = timeit.timeit(visualization, number = 1)
 	print("Elapsed time: ", round(elapsedTime, 3), "sec.")
+
+if __name__ == '__main__':
+	main()

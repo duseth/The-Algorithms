@@ -1,40 +1,50 @@
-def partition(initialList, leftSide, rigthSide):
-	pivot = initialList[rigthSide]
-	supportIndex = leftSide
-	for index in range(leftSide, rigthSide):
-		if initialList[index] <= pivot:
-			tempValue = initialList[index]
-			initialList[index] = initialList[supportIndex]
-			initialList[supportIndex] = tempValue
-			supportIndex += 1
-	tempValue = initialList[rigthSide]
-	initialList[rigthSide] = initialList[supportIndex]
-	initialList[supportIndex] = tempValue
-	return supportIndex
+def partition(collection, left, right):
+	pivot = collection[right]
+	j = left
+	for i in range(left, right):
+		if collection[i] <= pivot:
+			temp = collection[i]
+			collection[i] = collection[j]
+			collection[j] = temp
+			j += 1
+	temp = collection[right]
+	collection[right] = collection[j]
+	collection[j] = temp
 
-def quickSort(initialList, leftSide, rigthSide):
-	global passingCounter
-	if leftSide < rigthSide:
-		passingCounter += 1
-		print(" ", [passingCounter], "-->", initialList)
-		mainstay = partition(initialList, leftSide, rigthSide)
-		quickSort(initialList, leftSide, mainstay - 1)
-		quickSort(initialList, mainstay + 1, rigthSide)
-	return initialList
+	return j
+
+def quickSort(collection, left, right):
+	global counter
+
+	if left < right:
+		counter += 1
+		print(" ", [counter], "-->", collection)
+
+		mainstay = partition(collection, left, right)
+		quickSort(collection, left, mainstay - 1)
+		quickSort(collection, mainstay + 1, right)
+
+	return collection
 
 def visualization():
-	global passingCounter
+	global counter
 	from random import randint
 	lengthList = 10
-	initialList = [randint(0, lengthList) for item in range(lengthList)]
-	print("Initial list:", initialList)
-	print("Visualization of algorithm work.")
-	passingCounter = 0
-	initialList = quickSort(initialList, 0, lengthList - 1)
-	print("Final list:", initialList)
-	print("Total numbers of passages:", passingCounter)
+	collection = [randint(0, lengthList) for item in range(lengthList)]
 
-if __name__ == '__main__':
+	print("Initial list:", collection)
+	print("Visualization of algorithm work.")
+
+	counter = 0
+	collection = quickSort(collection, 0, lengthList - 1)
+
+	print("Final list:", collection)
+	print("Total numbers of passages:", counter)
+
+def main():
 	import timeit
 	elapsedTime = timeit.timeit(visualization, number = 1)
 	print("Elapsed time: ", round(elapsedTime, 3), "sec.")
+
+if __name__ == '__main__':
+	main()

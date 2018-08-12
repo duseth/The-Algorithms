@@ -1,35 +1,41 @@
-# Ilyas Salimov, 2018
-# Implemented on Python 3.5.2
-# My understanding of this algorithm.
+def stoogeSort(collection, left, right):
+	global counter
 
-def stoogeSort(initialList, leftSide, rightSide):
-	global passingCounter
-	if initialList[rightSide] < initialList[leftSide]:
-		tempValue = initialList[leftSide]
-		initialList[leftSide] = initialList[rightSide]
-		initialList[rightSide] = tempValue
-		print([passingCounter], "-->", initialList)
-		passingCounter += 1
-	if (rightSide - leftSide + 1) > 2:
-		listPart = (rightSide - leftSide + 1) // 3
-		stoogeSort(initialList, leftSide, rightSide - listPart)
-		stoogeSort(initialList, leftSide + listPart, rightSide)
-		stoogeSort(initialList, leftSide, rightSide - listPart)
-	return initialList
+	if collection[right] < collection[left]:
+		temp = collection[left]
+		collection[left] = collection[right]
+		collection[right] = temp
+
+		print([counter], "-->", collection)
+		counter += 1
+
+	if (right - left + 1) > 2:
+		listPart = (right - left + 1) // 3
+		stoogeSort(collection, left, right - listPart)
+		stoogeSort(collection, left + listPart, right)
+		stoogeSort(collection, left, right - listPart)
+
+	return collection
 
 def visualization():
 	from random import randint
-	global passingCounter
+	global counter
 	lengthList = 10
-	initialList = [randint(0, lengthList) for item in range(lengthList)]
-	print("Initial list:", initialList)
-	print("Visualization of algorithm work.")
-	initialList = stoogeSort(initialList, 0, lengthList - 1)
-	print("Final list:", initialList)
-	print("Total numbers of passages:", passingCounter)
+	collection = [randint(0, lengthList) for item in range(lengthList)]
 
-if __name__ == '__main__':
+	print("Initial list:", collection)
+	print("Visualization of algorithm work.")
+
+	collection = stoogeSort(collection, 0, lengthList - 1)
+
+	print("Final list:", collection)
+	print("Total numbers of passages:", counter)
+
+def main():
 	import timeit
-	passingCounter = 1
+	counter = 1
 	elapsedTime = timeit.timeit(visualization, number = 1)
 	print("Elapsed time: ", round(elapsedTime, 3), "sec.")
+
+if __name__ == '__main__':
+	main()
