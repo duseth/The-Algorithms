@@ -12,7 +12,8 @@ def codesTable(char):
 	14:"Q", 24:"R", 34:"S", 44:"T", 54:"U",
 	15:"V", 25:"W", 35:"X", 45:"Y", 55:"Z", 0:"J"
 	}
-	return table[char] 
+
+	return table[char]
 
 def encoding():
 	global textString, cipherText
@@ -29,28 +30,36 @@ def decoding():
 
 def decodingMode():
 	global textString, cipherText, wordKey
+
 	print("\n » Decoding mode activated! « (~˘▾˘)~")
+
 	try:
 		cipherText = str(input("[+] Enter your cipher text - "))
 		checking = cipherText[0]
 	except IndexError:
 		print("[x] Invalid input! For example: \"hello\".")
 		raise SystemExit
+
 	decodingPerformance = "%.5f" % timeit.timeit(decoding, number = 1)
+
 	print("\n »» The result of decoding by Polybius Square algorithm. ««")
 	print(textString)
 	print("\n[~] Polybius Square algorithm decoding performance - {} sec.".format(decodingPerformance))
 
 def encodingMode():
 	global textString, cipherText, wordKey
+
 	print("\n » Encoding mode activated! « (~˘▾˘)~")
+
 	try:
 		textString = str(input("[+] Enter your text - "))
 		checking = textString[0]
 	except IndexError:
 		print("[x] Invalid input! For example: \"hello\".")
-		raise SystemExit 
+		raise SystemExit
+
 	encodingPerformance = "%.5f" % timeit.timeit(encoding, number = 1)
+
 	print("\n »» The result of encoding by Polybius Square algorithm. ««")
 	print(cipherText)
 	print("\n[~] Polybius Square algorithm encoding performance - {} sec.".format(encodingPerformance))
@@ -58,6 +67,7 @@ def encodingMode():
 def main():
 	print("\t\t[x] Polybius Square cryptography algorithm. [x]")
 	print(" • 0. Encoding mode.\n • 1. Decoding mode.")
+
 	try:
 		mode = int(input("[?] Select program mode - "))
 	except:
@@ -73,5 +83,7 @@ def main():
 
 if __name__ == '__main__':
 	textString, cipherText = "", ""
-	import timeit, random, re
+	import timeit
+	import random
+	import re
 	main()

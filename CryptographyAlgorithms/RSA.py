@@ -49,7 +49,9 @@ def decoding():
 def demonstrationMode():
 	global textString, openKey, closeKey, cipherList
 	import timeit
+
 	print("\n » Demonstration mode activated! « (~˘▾˘)~")
+
 	try: 
 		textString = str(input("[+] Enter your text - "))
 		checking = textString[0]
@@ -57,13 +59,18 @@ def demonstrationMode():
 		print("[x] Invalid input! For example: \"hello\".")
 		raise SystemExit 
 	openKey, closeKey = creationKeys()
+
 	print("[~] Your open key - [{},{}].".format(openKey[0], openKey[1])) 
 	print("[~] Your close key - [{},{}].".format(closeKey[0], closeKey[1]))
+
 	encodingPerformance = "%.5f" % timeit.timeit(encoding, number = 1)
+
 	print("\n »» The result of encoding by RSA algorithm. ««") 
-	print(cipherList) 
+	print(cipherList)
+
 	textString = ""
 	decoding_performance = "%.5f" % timeit.timeit(decoding, number = 1)
+
 	print("\n »» The result of decoding by RSA algorithm. ««") 
 	print(textString)
 	print("\n[~] RSA algorithm encoding performance - {} sec.".format(encodingPerformance))
@@ -72,7 +79,9 @@ def demonstrationMode():
 def encodingMode():
 	global textString, openKey, cipherList
 	import timeit
+
 	print("\n » Encoding mode activated! « (~˘▾˘)~")
+
 	try:
 		textString = str(input("[+] Enter your text - "))
 		checking = textString[0]
@@ -87,7 +96,9 @@ def encodingMode():
 		print("[~] Your close key - [{},{}].".format(closeKey[0], closeKey[1]))
 	elif key == 1:
 		openKey = tuple(map(int, str(input("[+] Enter your open key - ")).split(",")))
+
 	encodingPerformance = "%.5f" % timeit.timeit(encoding, number = 1)
+
 	print("\n »» The result of encoding by RSA algorithm. ««")
 	print(cipherList)
 	print("\n[~] RSA algorithm encoding performance - {} sec.".format(encodingPerformance))
@@ -95,7 +106,9 @@ def encodingMode():
 def decodingMode():
 	global textString, closeKey, cipherList
 	import timeit
+
 	print("\n » Decoding mode activated! « (~˘▾˘)~") 
+
 	try: 
 		cipherList = input("[+] Enter your cipher list - ") 
 		if cipherList[0] == "[":
@@ -110,7 +123,9 @@ def decodingMode():
 		closeKey = tuple(map(int, closeKey[1: len(closeKey) - 1].split(","))) 
 	else:
 		closeKey = tuple(map(int, closeKey.split(",")))
+
 	decoding_performance = "%.5f" % timeit.timeit(decoding, number = 1)
+
 	print("\n »» The result of decoding by RSA algorithm. ««") 
 	print(textString)
 	print("\n[~] RSA algorithm decoding performance - {} sec.".format(decoding_performance)) 
@@ -118,6 +133,7 @@ def decodingMode():
 def main():
 	print("\t\t[x] Rivest–Shamir–Adleman cryptography algorithm. [x]") 
 	print(" • 0. Demonstration mode.\n • 1. Encoding mode.\n • 2. Decoding mode.") 
+
 	try: 
 		mode = int(input("[?] Select program mode - "))
 	except:

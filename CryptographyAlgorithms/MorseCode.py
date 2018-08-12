@@ -18,6 +18,7 @@ def codesTable(char):
 	"-----":"0", ".----":"1", "..---":"2", "...--":"3", "....-":"4",
 	".....":"5", "-....":"6", "--...":"7", "---..":"8", "----.":"9"
 	}
+
 	return table[char]
 
 def encoding():
@@ -37,28 +38,36 @@ def decoding():
 
 def decodingMode():
 	global textString, cipherText, wordKey
+
 	print("\n » Decoding mode activated! « (~˘▾˘)~")
+
 	try:
 		cipherText = str(input("[+] Enter your cipher text - "))
 		checking = cipherText[0]
 	except IndexError:
 		print("[x] Invalid input! For example: \"hello\".")
 		raise SystemExit
+
 	decodingPerformance = "%.5f" % timeit.timeit(decoding, number = 1)
+
 	print("\n »» The result of decoding by Morse algorithm. ««")
 	print(textString)
 	print("\n[~] Morse algorithm decoding performance - {} sec.".format(decodingPerformance))
 
 def encodingMode():
 	global textString, cipherText, wordKey
+
 	print("\n » Encoding mode activated! « (~˘▾˘)~")
+
 	try:
 		textString = str(input("[+] Enter your text - "))
 		checking = textString[0]
 	except IndexError:
 		print("[x] Invalid input! For example: \"hello\".")
-		raise SystemExit 
+		raise SystemExit
+
 	encodingPerformance = "%.5f" % timeit.timeit(encoding, number = 1)
+
 	print("\n »» The result of encoding by Morse algorithm. ««")
 	print(cipherText)
 	print("\n[~] Morse algorithm encoding performance - {} sec.".format(encodingPerformance))
@@ -66,6 +75,7 @@ def encodingMode():
 def main():
 	print("\t\t[x] Morse cryptography algorithm. [x]")
 	print(" • 0. Encoding mode.\n • 1. Decoding mode.")
+
 	try:
 		mode = int(input("[?] Select program mode - "))
 	except:
@@ -81,5 +91,7 @@ def main():
 
 if __name__ == '__main__':
 	textString, cipherText = "", ""
-	import timeit, random, re
+	import timeit
+	import random
+	import re
 	main()

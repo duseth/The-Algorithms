@@ -18,7 +18,9 @@ def decryption():
 
 def decryptionMode():
 	global textString, cipherText, key
+
 	print("\n » Decryption mode activated! « (~˘▾˘)~")
+
 	try:
 		cipherText = str(input("[+] Enter your cipher text - "))
 		checking = cipherText[0]
@@ -29,14 +31,18 @@ def decryptionMode():
 	except ValueError:
 		print("[x] Invalid input! For example: \"1, 2, 3\".")
 		raise SystemExit 
+
 	decodingPerformance = "%.5f" % timeit.timeit(decryption, number = 1)
+
 	print("\n »» The result of decryption by Caesar-Cipher algorithm. ««")
 	print(textString)
 	print("\n[~] Caesar-Cipher algorithm decoding performance - {} sec.".format(decodingPerformance))
 
 def encryptionMode():
 	global textString, cipherText, key
+
 	print("\n » Encryption mode activated! « (~˘▾˘)~")
+
 	try:
 		textString = str(input("[+] Enter your text - "))
 		checking = textString[0]
@@ -56,7 +62,9 @@ def encryptionMode():
 	except ValueError:
 		print("[x] Invalid input! For example: \"1, 2, 3\".")
 		raise SystemExit 
+
 	encodingPerformance = "%.5f" % timeit.timeit(encryption, number = 1)
+
 	print("\n »» The result of encryption by Caesar-Cipher algorithm. ««")
 	print(cipherText)
 	print("\n[~] Caesar-Cipher algorithm encoding performance - {} sec.".format(encodingPerformance))
@@ -64,6 +72,7 @@ def encryptionMode():
 def main():
 	print("\t\t[x] Caesar-Cipher cryptography algorithm. [x]")
 	print(" • 0. Encryption mode.\n • 1. Decryption mode.")
+
 	try:
 		mode = int(input("[?] Select program mode - "))
 	except:
@@ -79,5 +88,7 @@ def main():
 
 if __name__ == '__main__':
 	textString, cipherText, key = "", "", 0
-	import timeit, random, re
+	import timeit
+	import random
+	import re
 	main()
