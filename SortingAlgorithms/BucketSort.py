@@ -1,27 +1,38 @@
-def bucketSort(initialList):
-	lengthList = len(initialList)
-	bucketsList = [0 for insideIndex in range(lengthList + 1)]
+def bucketSort(collection):
+	length = len(collection)
+	bucketsList = [0 for j in range(length + 1)]
+
 	print("  Buckets list before sorting - {}".format(bucketsList))
-	for insideIndex in range(lengthList):
-		bucketsList[initialList[insideIndex]] += 1
+
+	for j in range(length):
+		bucketsList[collection[j]] += 1
+
 	print("  Buckets list after sorting - {}".format(bucketsList))
-	counterNumbers = 0
-	for outsideIndex in range(lengthList + 1):
-		for insideIndex in range(bucketsList[outsideIndex]):
-			initialList[counterNumbers] = outsideIndex
-			counterNumbers += 1
-	return initialList
+
+	counter = 0
+	for i in range(length + 1):
+		for j in range(bucketsList[i]):
+			collection[counter] = i
+			counter += 1
+
+	return collection
 
 def visualization():
 	from random import randint
-	lengthList = 10
-	initialList = [randint(0, lengthList) for item in range(lengthList)]
-	print("Initial list:", initialList)
-	print("Visualization of algorithm work.")
-	initialList = bucketSort(initialList)
-	print("Final list:", initialList)
+	length = 10
+	collection = [randint(0, length) for item in range(length)]
 
-if __name__ == '__main__':
+	print("Initial list:", collection)
+	print("Visualization of algorithm work.")
+
+	collection = bucketSort(collection)
+
+	print("Final list:", collection)
+
+def main():
 	import timeit
 	elapsedTime = timeit.timeit(visualization, number = 1)
 	print("Elapsed time: ", round(elapsedTime, 3), "sec.")
+
+if __name__ == '__main__':
+	main()

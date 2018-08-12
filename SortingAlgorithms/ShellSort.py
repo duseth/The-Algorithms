@@ -1,9 +1,9 @@
 def shellSort(collection):
-	lengthList = len(collection)
-	middle, counter = lengthList // 2, 0
+	lenght = len(collection)
+	middle, counter = lenght // 2, 0
 
 	while middle > 0:
-		for i in range(0, lengthList - middle):
+		for i in range(0, lenght - middle):
 			j = i
 			while (j >= 0) and (collection[j] > collection[j + middle]):
 				temp = collection[j]
@@ -19,8 +19,8 @@ def shellSort(collection):
 
 def visualization():
 	from random import randint
-	lengthList = 10
-	collection = [randint(0, lengthList) for i in range(lengthList)]
+	lenght = 10
+	collection = [randint(0, lenght) for i in range(lenght)]
 
 	print("Initial list:", collection)
 	print("Visualization of algorithm work.")

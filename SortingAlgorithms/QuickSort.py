@@ -29,14 +29,14 @@ def quickSort(collection, left, right):
 def visualization():
 	global counter
 	from random import randint
-	lengthList = 10
-	collection = [randint(0, lengthList) for item in range(lengthList)]
+	lenght = 10
+	collection = [randint(0, lenght) for item in range(lenght)]
 
 	print("Initial list:", collection)
 	print("Visualization of algorithm work.")
 
 	counter = 0
-	collection = quickSort(collection, 0, lengthList - 1)
+	collection = quickSort(collection, 0, lenght - 1)
 
 	print("Final list:", collection)
 	print("Total numbers of passages:", counter)

@@ -1,33 +1,42 @@
-def cocktailSort(initialList):
-	lengthList = len(initialList)
-	leftSide, rightSide = 0, lengthList - 1
-	while leftSide <= rightSide:
-		for index in range(leftSide, rightSide, +1):
-			if initialList[index] > initialList[index + 1]:
-				tempValue = initialList[index]
-				initialList[index] = initialList[index + 1]
-				initialList[index + 1] = tempValue
-		rightSide -= 1
-		for index in range(rightSide, leftSide, -1):
-			if initialList[index - 1] > initialList[index]:
-				tempValue = initialList[index]
-				initialList[index] = initialList[index - 1]
-				initialList[index - 1] = tempValue
-		leftSide += 1
-		print(" ", [leftSide], "-->", initialList)
-	return initialList, leftSide
+def cocktailSort(collection):
+	lenght = len(collection)
+	left, right = 0, lenght - 1
+
+	while left <= right:
+		for i in range(left, right, +1):
+			if collection[i] > collection[i + 1]:
+				temp = collection[i]
+				collection[i] = collection[i + 1]
+				collection[i + 1] = temp
+
+		right -= 1
+		for i in range(right, left, -1):
+			if collection[i - 1] > collection[i]:
+				temp = collection[i]
+				collection[i] = collection[i - 1]
+				collection[i - 1] = temp
+		left += 1
+		print(" ", [left], "-->", collection)
+
+	return collection, left
 
 def visualization():
 	from random import randint
-	lengthList = 10
-	initialList = [randint(0, lengthList) for index in range(lengthList)]
-	print("Initial list:", initialList)
+	lenght = 10
+	collection = [randint(0, lenght) for i in range(lenght)]
+
+	print("Initial list:", collection)
 	print("Visualization of algorithm work.")
-	initialList, passingCounter = cocktailSort(initialList)
-	print("Final list:", initialList)
+
+	collection, passingCounter = cocktailSort(collection)
+
+	print("Final list:", collection)
 	print("Total numbers of passages:", passingCounter)
 
-if __name__ == '__main__':
+def main():
 	import timeit
 	elapsedTime = timeit.timeit(visualization, number = 1)
 	print("Elapsed time: ", round(elapsedTime, 3), "sec.")
+
+if __name__ == '__main__':
+	main()

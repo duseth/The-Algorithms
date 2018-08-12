@@ -1,26 +1,34 @@
-def insertionSort(initialList):
-	lengthList = len(initialList)
-	for index in range(0, lengthList):
-		currentValue = initialList[index]
-		currentIndex = index
-		while (currentIndex > 0) and (initialList[currentIndex - 1] > currentValue):
-			initialList[currentIndex] = initialList[currentIndex - 1]
-			currentIndex -= 1
-		initialList[currentIndex] = currentValue
-		print(" ", [index + 1], "-->", initialList)
-	return initialList, index + 1
+def insertionSort(collection):
+	lenght = len(collection)
+	for i in range(0, lenght):
+		value = collection[i]
+		j = i
+		while (j > 0) and (collection[j - 1] > value):
+			collection[j] = collection[j - 1]
+			j -= 1
+		collection[j] = value
+
+		print(" ", [i + 1], "-->", collection)
+
+	return collection, i + 1
 
 def visualization():
 	from random import randint
-	lengthList = 10
-	initialList = [randint(0, lengthList) for index in range(lengthList)]
-	print("Initial list:", initialList)
-	print("Visualization of algorithm work.")
-	initialList, index = insertionSort(initialList)
-	print("Final list:", initialList) 
-	print("Total numbers of passages:", index)
+	lenght = 10
+	collection = [randint(0, lenght) for i in range(lenght)]
 
-if __name__ == '__main__':
+	print("Initial list:", collection)
+	print("Visualization of algorithm work.")
+
+	collection, i = insertionSort(collection)
+
+	print("Final list:", collection) 
+	print("Total numbers of passages:", i)
+
+def main():
 	import timeit
 	elapsedTime = timeit.timeit(visualization, number = 1)
 	print("Elapsed time: ", round(elapsedTime, 3), "sec.")
+
+if __name__ == '__main__':
+	main()

@@ -1,8 +1,8 @@
 def selectionSort(collection):
-	lengthList = len(collection)
-	for i in range(0, lengthList - 1):
+	lenght = len(collection)
+	for i in range(0, lenght - 1):
 		j = i
-		for insidexIndex in range(i + 1, lengthList):
+		for insidexIndex in range(i + 1, lenght):
 			if collection[insidexIndex] < collection[j]:
 				j = insidexIndex
 		temp = collection[j]
@@ -15,8 +15,8 @@ def selectionSort(collection):
 
 def visualization():
 	from random import randint
-	lengthList = 10
-	collection = [randint(0, lengthList) for item in range(lengthList)]
+	lenght = 10
+	collection = [randint(0, lenght) for item in range(lenght)]
 
 	print("Initial list:", collection)
 	print("Visualization of algorithm work.")

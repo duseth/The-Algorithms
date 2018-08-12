@@ -1,31 +1,40 @@
-def gnomeSort(initialList):
-	lengthList = len(initialList)
-	index, supportIndex, passingCounter = 1, 2, 0
-	while index < lengthList:
-		if initialList[index - 1] < initialList[index]:
-			index, supportIndex = supportIndex, supportIndex + 1
-			passingCounter += 1
-			print(" ", [passingCounter], "-->", initialList)
+def gnomeSort(collection):
+	lenght = len(collection)
+	i, j, counter = 1, 2, 0
+
+	while i < lenght:
+		if collection[i - 1] < collection[i]:
+			i, j = j, j + 1
+
+			counter += 1
+			print(" ", [counter], "-->", collection)
 		else:
-			tempValue = initialList[index]
-			initialList[index] = initialList[index - 1]
-			initialList[index - 1] = tempValue
-			index = index - 1
-			if index == 0:
-				index, supportIndex = supportIndex, supportIndex + 1
-	return initialList, passingCounter
+			tempValue = collection[i]
+			collection[i] = collection[i - 1]
+			collection[i - 1] = tempValue
+			i = i - 1
+			if i == 0:
+				i, j = j, j + 1
+
+	return collection, counter
 
 def visualization():
 	from random import randint
-	lengthList = 10
-	initialList = [randint(0, lengthList) for index in range(lengthList)]
-	print("Initial list:", initialList)
-	print("Visualization of algorithm work.")
-	initialList, passingCounter = gnomeSort(initialList)
-	print("Final list:", initialList)
-	print("Total numbers of passages:", passingCounter)
+	lenght = 10
+	collection = [randint(0, lenght) for i in range(lenght)]
 
-if __name__ == '__main__':
+	print("Initial list:", collection)
+	print("Visualization of algorithm work.")
+
+	collection, counter = gnomeSort(collection)
+
+	print("Final list:", collection)
+	print("Total numbers of passages:", counter)
+
+def main():
 	import timeit
 	elapsedTime = timeit.timeit(visualization, number = 1)
 	print("Elapsed time: ", round(elapsedTime, 3), "sec.")
+
+if __name__ == '__main__':
+	main()

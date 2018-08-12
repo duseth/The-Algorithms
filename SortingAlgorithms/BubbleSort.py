@@ -1,29 +1,36 @@
-def bubbleSort(initialList):
-	lengthList = len(initialList)
-	for outsideIndex in range(0, lengthList - 1):
+def bubbleSort(collection):
+	length = len(collection)
+	for i in range(0, length - 1):
 		isSorted = True
-		for insideIndex in range(0, lengthList - 1):
-			if initialList[insideIndex] > initialList[insideIndex + 1]:
-				tempValue = initialList[insideIndex]
-				initialList[insideIndex] = initialList[insideIndex + 1]
-				initialList[insideIndex + 1] = tempValue
+		for j in range(0, length - 1):
+			if collection[j] > collection[j + 1]:
+				temp = collection[j]
+				collection[j] = collection[j + 1]
+				collection[j + 1] = temp
 				isSorted = False
-		print(" ", [outsideIndex + 1], "-->", initialList)
+		print(" ", [i + 1], "-->", collection)
 		if isSorted:
 			break
-	return initialList, outsideIndex + 1
+
+	return collection, i + 1
 
 def visualization():
 	from random import randint
-	lengthList = 10
-	initialList = [randint(0, lengthList) for item in range(lengthList)]
-	print("Initial list:", initialList)
-	print("Visualization of algorithm work.")
-	initialList, passingCounter = bubbleSort(initialList)
-	print("Final list:", initialList)
-	print("Total numbers of passages:", passingCounter)
+	length = 10
+	collection = [randint(0, length) for item in range(length)]
 
-if __name__ == '__main__':
+	print("Initial list:", collection)
+	print("Visualization of algorithm work.")
+
+	collection, counter = bubbleSort(collection)
+
+	print("Final list:", collection)
+	print("Total numbers of passages:", counter)
+
+def main():
 	import timeit
 	elapsedTime = timeit.timeit(visualization, number = 1)
 	print("Elapsed time: ", round(elapsedTime, 3), "sec.")
+
+if __name__ == '__main__':
+	main()
