@@ -1,37 +1,44 @@
-def binarySearch(initialList, target):
-	leftSide, rigthtSide, passingCounter = 0, len(initialList), 1
-	while leftSide != rigthtSide:	
-		c = (leftSide + rigthtSide) // 2
-		if target == initialList[c]:
-			print(" ", [passingCounter], "-->", [initialList[c]])
-			passingCounter += 1
-			return c, passingCounter
-		elif target < initialList[c]:
-			rigthtSide = c
-			print(" ", [passingCounter], "-->", initialList[:rigthtSide])
-			passingCounter += 1
+def binarySearch(collection, target):
+	left, right, counter = 0, len(collection), 1
+	while left != right:	
+		c = (left + right) // 2
+		if target == collection[c]:
+			print(" ", [counter], "-->", [collection[c]])
+			counter += 1
+			return c, counter
+		elif target < collection[c]:
+			right = c
+			print(" ", [counter], "-->", collection[:right])
+			counter += 1
 		else: 
-			leftSide = c + 1
-			print(" ", [passingCounter], "-->", initialList[leftSide:])
-			passingCounter += 1
-	return -1, passingCounter
+			left = c + 1
+			print(" ", [counter], "-->", collection[left:])
+			counter += 1
+
+	return -1, counter
 
 def visualization():
 	from random import randint
-	lengthList = 10 
-	initialList = [leftSide for leftSide in range(0, lengthList)]
-	target = randint(0, lengthList - 1)
-	print("Initial list:", initialList)
+	length = 10 
+	collection = [left for left in range(0, length)]
+	target = randint(0, length - 1)
+
+	print("Initial list:", collection)
 	print("The number of which must be found:", target)
 	print("Visualization of algorithm work.")
-	searchingResult, passingCounter = binarySearch(initialList, target)
-	if searchingResult != -1:
-		print("Result of searching:", searchingResult)
+
+	result, counter = binarySearch(collection, target)
+	if result != -1:
+		print("Result of searching:", result)
 	else:
 		print("This number does not exist in the list.")
-	print("Total numbers of passages:", passingCounter)
 
-if __name__ == '__main__':
+	print("Total numbers of passages:", counter)
+
+def main():
 	import timeit
 	elapsedTime = timeit.timeit(visualization, number = 1)
 	print("Elapsed time: ", round(elapsedTime, 3), "sec.")
+
+if __name__ == '__main__':
+	main()

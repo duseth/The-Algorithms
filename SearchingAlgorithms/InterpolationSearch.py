@@ -1,37 +1,44 @@
-def interpolationSearch(initialList, target):
-	leftSide, rigthSide, passingCounter = 0, len(initialList) - 1, 1
-	while (initialList[leftSide] <= target) and (initialList[rigthSide] >= target):
-		middlePosition = leftSide + ((target - initialList[leftSide]) * (rigthSide - leftSide)) // (initialList[rigthSide] - initialList[leftSide])
-		if initialList[middlePosition] < target:
-			leftSide = middlePosition + 1
-			print(" ", [passingCounter], "-->", initialList[leftSide:])
-			passingCounter += 1
-		elif initialList[middlePosition] > target:
-			rigthSide = middlePosition - 1
-			print(" ", [passingCounter], "-->", initialList[:rigthSide])
-			passingCounter += 1
+def interpolationSearch(collection, target):
+	left, right, counter = 0, len(collection) - 1, 1
+	while (collection[left] <= target) and (collection[right] >= target):
+		middle = left + ((target - collection[left]) * (right - left)) // (collection[right] - collection[left])
+		if collection[middle] < target:
+			left = middle + 1
+			print(" ", [counter], "-->", collection[left:])
+			counter += 1
+		elif collection[middle] > target:
+			right = middle - 1
+			print(" ", [counter], "-->", collection[:right])
+			counter += 1
 		else:
-			print(" ", [passingCounter], "-->", [initialList[middlePosition]])
-			passingCounter += 1
-			return middlePosition, passingCounter
-	return -1, passingCounter
+			print(" ", [counter], "-->", [collection[middle]])
+			counter += 1
+			return middle, counter
+
+	return -1, counter
 
 def visualization():
 	from random import randint
-	lengthList = 10
-	initialList = [item for item in range(0, lengthList)]
-	target = randint(0, lengthList - 1)
-	print("Initial list:", initialList)
+	length = 10
+	collection = [item for item in range(0, length)]
+	target = randint(0, length - 1)
+
+	print("Initial list:", collection)
 	print("The number of which must be found:", target)
 	print("Visualization of algorithm work.")
-	searchingResult, passingCounter = interpolationSearch(initialList, target)
-	if searchingResult != -1:
-		print("Result of searching: ", searchingResult)
+
+	result, counter = interpolationSearch(collection, target)
+	if result != -1:
+		print("Result of searching: ", result)
 	else:
 		print("This number does not exist in the list.")
-	print("Total numbers of passages:", passingCounter)
 
-if __name__ == '__main__':
+	print("Total numbers of passages:", counter)
+
+def main():
 	import timeit
 	elapsedTime = timeit.timeit(visualization, number = 1)
 	print("Elapsed time: ", round(elapsedTime, 3), "sec.")
+
+if __name__ == '__main__':
+	main()
