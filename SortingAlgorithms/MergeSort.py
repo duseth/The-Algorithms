@@ -47,9 +47,9 @@ def visualization():
 
 def main():
 	import timeit
-	counter = 1
 	elapsedTime = timeit.timeit(visualization, number = 1)
 	print("Elapsed time: ", round(elapsedTime, 3), "sec.")
 
 if __name__ == '__main__':
+	counter = 1
 	main()
