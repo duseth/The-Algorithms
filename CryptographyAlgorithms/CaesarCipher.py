@@ -17,8 +17,8 @@ def decryption(str1,key):
     return str2
 
     str1=input() /*message to be sent*/
-    key=int(input()) /*key to be shared among sender and receiver*/
+    key=int(input()) /*key to be shared among sender,receiver*/
     str2=encryption(str1,key)
     print(str2) /*encypted text*/
     str2=decryption(str2,key)
-    print(str2) /*decypted or original text*/
+    print(str2) /*decypted text*/
