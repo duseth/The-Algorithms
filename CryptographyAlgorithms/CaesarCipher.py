@@ -1,94 +1,24 @@
-def encryption():
-	global textString, cipherText, key
-	textString, cipherText = textString.upper(), ""
-	for symbol in textString:
-		if re.search('[A-Z]', symbol):
-			cipherText += chr((ord(symbol) + key - 13) % 26 + ord('A'))
-		else:
-			cipherText += symbol
+def encryption(str1,key):
+    str2=''
+    for i in str1:
+        if i.islower():
+            str2+=chr((((ord(i)-97)+key)%26)+97)
+        if i.isupper():
+            str2+=chr((((ord(i)-65)+key)%26)+65)
+    return str2
 
-def decryption():
-	global textString, cipherText, key
-	cipherText, textString = cipherText.upper(), ""
-	for symbol in cipherText:
-		if re.search('[A-Z]', symbol):
-			textString += chr((ord(symbol) - key - 13) % 26 + ord('A'))
-		else:
-			textString += symbol
+def decryption(str1,key):
+    str2=''
+    for i in str1:
+        if i.islower():
+            str2+=chr((((ord(i)-97)-key)%26)+97)
+        if i.isupper():
+            str2+=chr((((ord(i)-65)-key)%26)+65)
+    return str2
 
-def decryptionMode():
-	global textString, cipherText, key
-
-	print("\n » Decryption mode activated! « (~˘▾˘)~")
-
-	try:
-		cipherText = str(input("[+] Enter your cipher text - "))
-		checking = cipherText[0]
-		key = int(input("[+] Enter your key - "))
-	except IndexError:
-		print("[x] Invalid input! For example: \"hello\".")
-		raise SystemExit 
-	except ValueError:
-		print("[x] Invalid input! For example: \"1, 2, 3\".")
-		raise SystemExit 
-
-	decodingPerformance = "%.5f" % timeit.timeit(decryption, number = 1)
-
-	print("\n »» The result of decryption by Caesar-Cipher algorithm. ««")
-	print(textString)
-	print("\n[~] Caesar-Cipher algorithm decoding performance - {} sec.".format(decodingPerformance))
-
-def encryptionMode():
-	global textString, cipherText, key
-
-	print("\n » Encryption mode activated! « (~˘▾˘)~")
-
-	try:
-		textString = str(input("[+] Enter your text - "))
-		checking = textString[0]
-		print(" • 0. Your key.\n • 1. Random key.")
-		keyMode = int(input("[?] Select key mode - "))
-		if keyMode == 0:
-			key = int(input("[+] Enter your key - "))
-		elif keyMode == 1:
-			key = random.randint(1, 25)
-			print("[~] Your key - {}".format(key))
-		else:
-			print("[x] Invalid input! For example: \"0, 1\".")
-			raise SystemExit 
-	except IndexError:
-		print("[x] Invalid input! For example: \"hello\".")
-		raise SystemExit 
-	except ValueError:
-		print("[x] Invalid input! For example: \"1, 2, 3\".")
-		raise SystemExit 
-
-	encodingPerformance = "%.5f" % timeit.timeit(encryption, number = 1)
-
-	print("\n »» The result of encryption by Caesar-Cipher algorithm. ««")
-	print(cipherText)
-	print("\n[~] Caesar-Cipher algorithm encoding performance - {} sec.".format(encodingPerformance))
-
-def main():
-	print("\t\t[x] Caesar-Cipher cryptography algorithm. [x]")
-	print(" • 0. Encryption mode.\n • 1. Decryption mode.")
-
-	try:
-		mode = int(input("[?] Select program mode - "))
-	except:
-		print("[x] Invalid input! For example: \"1, 2\".")
-		raise SystemExit 
-	if mode == 0:
-		encryptionMode()
-	elif mode == 1:
-		decryptionMode()
-	else:
-		print("[x] Invalid input! You can only select: \"0, 1\".")
-		raise SystemExit 
-
-if __name__ == '__main__':
-	textString, cipherText, key = "", "", 0
-	import timeit
-	import random
-	import re
-	main()
+    str1=input() /*message to be sent*/
+    key=int(input()) /*key to be shared among sender and receiver*/
+    str2=encryption(str1,key)
+    print(str2) /*encypted text*/
+    str2=decryption(str2,key)
+    print(str2) /*decypted or original text*/
