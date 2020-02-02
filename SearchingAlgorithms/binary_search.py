@@ -1,33 +1,37 @@
-def binarySearch(collection, target):
-	left, right, counter = 0, len(collection), 1
+import timeit
+from random import randint
+
+
+def binary_search(collection, target):
+	left, right, counter = 0, len(collection), 0
 	while left != right:	
 		c = (left + right) // 2
 		if target == collection[c]:
-			print(" ", [counter], "-->", [collection[c]])
 			counter += 1
+			print("Step %i -->" % counter, [collection[c]])
 			return c, counter
 		elif target < collection[c]:
+			counter += 1
 			right = c
-			print(" ", [counter], "-->", collection[:right])
+			print("Step %i -->" % counter, collection[:right])
+		else:
 			counter += 1
-		else: 
 			left = c + 1
-			print(" ", [counter], "-->", collection[left:])
-			counter += 1
+			print("Step %i -->" % counter, collection[left:])
 
 	return -1, counter
 
+
 def visualization():
-	from random import randint
 	length = 10 
-	collection = [left for left in range(0, length)]
+	collection = [item for item in range(0, length)]
 	target = randint(0, length - 1)
 
 	print("Initial list:", collection)
 	print("The number of which must be found:", target)
 	print("Visualization of algorithm work.")
 
-	result, counter = binarySearch(collection, target)
+	result, counter = binary_search(collection, target)
 	if result != -1:
 		print("Result of searching:", result)
 	else:
@@ -35,10 +39,11 @@ def visualization():
 
 	print("Total numbers of passages:", counter)
 
+
 def main():
-	import timeit
-	elapsedTime = timeit.timeit(visualization, number = 1)
-	print("Elapsed time: ", round(elapsedTime, 3), "sec.")
+	elapsed_time = timeit.timeit(visualization, number=1)
+	print("Elapsed time: ", round(elapsed_time, 7), "sec.")
+
 
 if __name__ == '__main__':
 	main()

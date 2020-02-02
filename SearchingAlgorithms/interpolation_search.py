@@ -1,24 +1,28 @@
-def interpolationSearch(collection, target):
-	left, right, counter = 0, len(collection) - 1, 1
+import timeit
+from random import randint
+
+
+def interpolation_search(collection, target):
+	left, right, counter = 0, len(collection) - 1, 0
 	while (collection[left] <= target) and (collection[right] >= target):
 		middle = left + ((target - collection[left]) * (right - left)) // (collection[right] - collection[left])
 		if collection[middle] < target:
+			counter += 1
 			left = middle + 1
-			print(" ", [counter], "-->", collection[left:])
-			counter += 1
+			print("Step %i -->" % counter, collection[left:])
 		elif collection[middle] > target:
+			counter += 1
 			right = middle - 1
-			print(" ", [counter], "-->", collection[:right])
-			counter += 1
+			print("Step %i -->" % counter, collection[:right])
 		else:
-			print(" ", [counter], "-->", [collection[middle]])
 			counter += 1
+			print("Step %i -->" % counter, [collection[middle]])
 			return middle, counter
 
 	return -1, counter
 
+
 def visualization():
-	from random import randint
 	length = 10
 	collection = [item for item in range(0, length)]
 	target = randint(0, length - 1)
@@ -27,7 +31,7 @@ def visualization():
 	print("The number of which must be found:", target)
 	print("Visualization of algorithm work.")
 
-	result, counter = interpolationSearch(collection, target)
+	result, counter = interpolation_search(collection, target)
 	if result != -1:
 		print("Result of searching: ", result)
 	else:
@@ -35,10 +39,11 @@ def visualization():
 
 	print("Total numbers of passages:", counter)
 
+
 def main():
-	import timeit
-	elapsedTime = timeit.timeit(visualization, number = 1)
-	print("Elapsed time: ", round(elapsedTime, 3), "sec.")
+	elapsed_time = timeit.timeit(visualization, number=1)
+	print("Elapsed time: ", round(elapsed_time, 7), "sec.")
+
 
 if __name__ == '__main__':
 	main()
