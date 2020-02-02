@@ -1,50 +1,51 @@
-def partition(collection, left, right):
-	pivot = collection[right]
-	j = left
-	for i in range(left, right):
-		if collection[i] <= pivot:
-			temp = collection[i]
-			collection[i] = collection[j]
-			collection[j] = temp
-			j += 1
-	temp = collection[right]
-	collection[right] = collection[j]
-	collection[j] = temp
+import timeit
+from random import randint
 
-	return j
+
+def partition(collection, left, right):
+    pivot = collection[right]
+    j = left
+    for i in range(left, right):
+        if collection[i] <= pivot:
+            collection[i], collection[j] = collection[j], collection[i]
+            j += 1
+    collection[right], collection[j] = collection[j], collection[right]
+    return j
+
 
 def quickSort(collection, left, right):
-	global counter
+    global counter
 
-	if left < right:
-		counter += 1
-		print(" ", [counter], "-->", collection)
+    if left < right:
+        counter += 1
+        print("Step %i -->" % counter, collection)
 
-		mainstay = partition(collection, left, right)
-		quickSort(collection, left, mainstay - 1)
-		quickSort(collection, mainstay + 1, right)
+        mainstay = partition(collection, left, right)
+        quickSort(collection, left, mainstay - 1)
+        quickSort(collection, mainstay + 1, right)
 
-	return collection
+    return collection
+
 
 def visualization():
-	global counter
-	from random import randint
-	lenght = 10
-	collection = [randint(0, lenght) for item in range(lenght)]
+    global counter
+    length = 10
+    collection = [randint(0, length) for _ in range(length)]
 
-	print("Initial list:", collection)
-	print("Visualization of algorithm work.")
+    print("Initial list:", collection)
+    print("Visualization of algorithm work.")
 
-	counter = 0
-	collection = quickSort(collection, 0, lenght - 1)
+    counter = 0
+    collection = quickSort(collection, 0, length - 1)
 
-	print("Final list:", collection)
-	print("Total numbers of passages:", counter)
+    print("Final list:", collection)
+    print("Total numbers of passages:", counter)
+
 
 def main():
-	import timeit
-	elapsedTime = timeit.timeit(visualization, number = 1)
-	print("Elapsed time: ", round(elapsedTime, 3), "sec.")
+    elapsedTime = timeit.timeit(visualization, number=1)
+    print("Elapsed time: ", round(elapsedTime, 7), "sec.")
+
 
 if __name__ == '__main__':
-	main()
+    main()

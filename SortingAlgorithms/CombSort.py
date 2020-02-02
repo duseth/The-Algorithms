@@ -1,44 +1,47 @@
-def combSort(collection):
+import timeit
+from random import randint
+
+
+def comb_sort(collection):
 	global counter
-	lenght = len(collection)
-	gap = lenght * 10 // 13 if lenght > 1 else 0
+	length = len(collection)
+	gap = length * 10 // 13 if length > 1 else 0
 
 	while gap:
 		if 8 < gap < 11:
 			gap = 11
 		swapped = 0
-		for index in range(lenght - gap):
+		for index in range(length - gap):
 			if collection[index + gap] < collection[index]:
-				temp = collection[index + gap]
-				collection[index + gap] = collection[index]
-				collection[index] = temp
+				collection[index + gap], collection[index] = collection[index], collection[index + gap]
 				swapped = 1
 
-				print([counter], "->", collection)
 				counter += 1
+				print("Step %i -->" % counter, collection)
 		gap = (gap * 10 // 13) or swapped
 
 	return collection
 
+
 def visualization():
 	global counter
-	from random import randint
-	lenght = 10
-	collection = [randint(0, lenght) for item in range(lenght)]
+	length = 10
+	collection = [randint(0, length) for _ in range(length)]
 
 	print("Initial list:", collection)
 	print("Visualization of algorithm work.")
 
-	collection = combSort(collection)
+	collection = comb_sort(collection)
 
 	print("Final list:", collection)
 	print("Total numbers of passages:", counter)
 
+
 def main():
-	import timeit
-	elapsedTime = timeit.timeit(visualization, number = 1)
-	print("Elapsed time: ", round(elapsedTime, 3), "sec.")
+	elapsed_time = timeit.timeit(visualization, number=1)
+	print("Elapsed time: ", round(elapsed_time, 7), "sec.")
+
 
 if __name__ == '__main__':
-	counter = 1
+	counter = 0
 	main()

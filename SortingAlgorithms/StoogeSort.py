@@ -1,41 +1,43 @@
-def stoogeSort(collection, left, right):
-	global counter
+import timeit
+from random import randint
 
-	if collection[right] < collection[left]:
-		temp = collection[left]
-		collection[left] = collection[right]
-		collection[right] = temp
 
-		print([counter], "-->", collection)
-		counter += 1
+def stooge_sort(collection, left, right):
+    global counter
+    if left >= right:
+        return
 
-	if (right - left + 1) > 2:
-		listPart = (right - left + 1) // 3
-		stoogeSort(collection, left, right - listPart)
-		stoogeSort(collection, left + listPart, right)
-		stoogeSort(collection, left, right - listPart)
+    if collection[right] < collection[left]:
+        collection[left], collection[right] = collection[right], collection[left]
 
-	return collection
+        counter += 1
+        print("Step %i -->" % counter, collection)
+
+    if (right - left + 1) > 2:
+        list_part = (right - left + 1) // 3
+        stooge_sort(collection, left, right - list_part)
+        stooge_sort(collection, left + list_part, right)
+        stooge_sort(collection, left, right - list_part)
+
 
 def visualization():
-	from random import randint
-	global counter
-	lengthList = 10
-	collection = [randint(0, lengthList) for item in range(lengthList)]
+    length_list = 10
+    collection = [randint(0, length_list) for _ in range(length_list)]
 
-	print("Initial list:", collection)
-	print("Visualization of algorithm work.")
+    print("Initial list:", collection)
+    print("Visualization of algorithm work.")
 
-	collection = stoogeSort(collection, 0, lengthList - 1)
+    stooge_sort(collection, 0, length_list - 1)
 
-	print("Final list:", collection)
-	print("Total numbers of passages:", counter)
+    print("Final list:", collection)
+    print("Total numbers of passages:", counter)
+
 
 def main():
-	import timeit
-	elapsedTime = timeit.timeit(visualization, number = 1)
-	print("Elapsed time: ", round(elapsedTime, 3), "sec.")
+    elapsed_time = timeit.timeit(visualization, number=1)
+    print("Elapsed time: ", round(elapsed_time, 7), "sec.")
+
 
 if __name__ == '__main__':
-	counter = 1
-	main()
+    counter = 0
+    main()

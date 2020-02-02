@@ -1,3 +1,4 @@
+import timeit
 from random import randint
 
 
@@ -35,7 +36,6 @@ def visualization():
 
 
 def main():
-    import timeit
     elapsed_time = timeit.timeit(visualization, number=1)
     print("Elapsed time: ", round(elapsed_time, 7), "sec.")
 

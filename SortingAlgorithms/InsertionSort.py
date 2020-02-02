@@ -1,6 +1,11 @@
-def insertionSort(collection):
-	lenght = len(collection)
-	for i in range(0, lenght):
+import timeit
+from random import randint
+
+
+def insertion_sort(collection):
+	counter = 0
+	length = len(collection)
+	for i in range(0, length):
 		value = collection[i]
 		j = i
 		while (j > 0) and (collection[j - 1] > value):
@@ -8,27 +13,29 @@ def insertionSort(collection):
 			j -= 1
 		collection[j] = value
 
-		print(" ", [i + 1], "-->", collection)
+		counter += 1
+		print("Step %i -->" % counter, collection)
 
-	return collection, i + 1
+	return collection, counter
+
 
 def visualization():
-	from random import randint
-	lenght = 10
-	collection = [randint(0, lenght) for i in range(lenght)]
+	length = 10
+	collection = [randint(0, length) for _ in range(length)]
 
 	print("Initial list:", collection)
 	print("Visualization of algorithm work.")
 
-	collection, i = insertionSort(collection)
+	collection, counter = insertion_sort(collection)
 
 	print("Final list:", collection) 
-	print("Total numbers of passages:", i)
+	print("Total numbers of passages:", counter)
+
 
 def main():
-	import timeit
-	elapsedTime = timeit.timeit(visualization, number = 1)
-	print("Elapsed time: ", round(elapsedTime, 3), "sec.")
+	elapsed_time = timeit.timeit(visualization, number=1)
+	print("Elapsed time: ", round(elapsed_time, 7), "sec.")
+
 
 if __name__ == '__main__':
 	main()

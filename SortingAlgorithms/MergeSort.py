@@ -1,55 +1,60 @@
-def mergesort(collection, lenght):
-	global counter
-	if len(collection) > 1:
-		middlePosition = len(collection) // 2
-		left = collection[:middlePosition]
-		right = collection[middlePosition:]
-		mergesort(left, lenght), mergesort(right, lenght)
+import timeit
+from random import randint
 
-		leftIndex, rightIndex, index = 0, 0, 0
-		while (leftIndex < len(left)) and (rightIndex < len(right)):
-			if left[leftIndex] < right[rightIndex]:
-				collection[index] = left[leftIndex]
-				leftIndex += 1
-			else:
-				collection[index] = right[rightIndex]
-				rightIndex += 1
-			index += 1
 
-		while leftIndex < len(left):
-			collection[index] = left[leftIndex]
-			leftIndex += 1
-			index += 1
+def merge_sort(collection, length):
+    global counter
+    if len(collection) > 1:
+        middle_position = len(collection) // 2
+        left = collection[:middle_position]
+        right = collection[middle_position:]
+        merge_sort(left, length), merge_sort(right, length)
 
-		while rightIndex < len(right):
-			collection[index] = right[rightIndex]
-			rightIndex += 1
-			index += 1
+        left_index, right_index, index = 0, 0, 0
+        while (left_index < len(left)) and (right_index < len(right)):
+            if left[left_index] < right[right_index]:
+                collection[index] = left[left_index]
+                left_index += 1
+            else:
+                collection[index] = right[right_index]
+                right_index += 1
+            index += 1
 
-		print(" ", [counter], "-->", left, "<->", right)
-		counter += 1
+        while left_index < len(left):
+            collection[index] = left[left_index]
+            left_index += 1
+            index += 1
 
-	if len(collection) == lenght:
-		return collection
+        while right_index < len(right):
+            collection[index] = right[right_index]
+            right_index += 1
+            index += 1
+
+        counter += 1
+        print("Step %i -->" % counter, left, "<-->", right)
+
+    if len(collection) == length:
+        return collection
+
 
 def visualization():
-	from random import randint
-	lenght = 10
-	collection = [randint(0, lenght) for item in range(lenght)]
+    length = 10
+    collection = [randint(0, length) for _ in range(length)]
 
-	print("Initial list:", collection)
-	print("Visualization of algorithm work.")
+    print("Initial list:", collection)
+    print("Visualization of algorithm work.")
 
-	collection= mergesort(collection, lenght)
+    collection = merge_sort(collection, length)
 
-	print("Final list:", collection)
-	print("Total numbers of passages:", counter - 1)
+    print("Final list:", collection)
+    print("Total numbers of passages:", counter)
+
 
 def main():
-	import timeit
-	elapsedTime = timeit.timeit(visualization, number = 1)
-	print("Elapsed time: ", round(elapsedTime, 3), "sec.")
+    elapsed_time = timeit.timeit(visualization, number=1)
+    print("Elapsed time: ", round(elapsed_time, 7), "sec.")
+
 
 if __name__ == '__main__':
-	counter = 1
-	main()
+    counter = 0
+    main()

@@ -1,35 +1,40 @@
-def selectionSort(collection):
-	lenght = len(collection)
-	for i in range(0, lenght - 1):
-		j = i
-		for insidexIndex in range(i + 1, lenght):
-			if collection[insidexIndex] < collection[j]:
-				j = insidexIndex
-		temp = collection[j]
-		collection[j] = collection[i]
-		collection[i] = temp
+import timeit
+from random import randint
 
-		print(" ", [i + 1], "-->", collection)
 
-	return collection, i + 1
+def selection_sort(collection):
+    counter = 0
+    length = len(collection)
+    for i in range(0, length - 1):
+        j = i
+        for index in range(i + 1, length):
+            if collection[index] < collection[j]:
+                j = index
+        collection[j], collection[i] = collection[i], collection[j]
+
+        counter += 1
+        print("Step %i -->" % counter, collection)
+
+    return collection, counter
+
 
 def visualization():
-	from random import randint
-	lenght = 10
-	collection = [randint(0, lenght) for item in range(lenght)]
+    length = 10
+    collection = [randint(0, length) for _ in range(length)]
 
-	print("Initial list:", collection)
-	print("Visualization of algorithm work.")
+    print("Initial list:", collection)
+    print("Visualization of algorithm work.")
 
-	collection, i = selectionSort(collection)
+    collection, counter = selection_sort(collection)
 
-	print("Final list:", collection)
-	print("Total numbers of passages:", i)
+    print("Final list:", collection)
+    print("Total numbers of passages:", counter)
+
 
 def main():
-	import timeit
-	elapsedTime = timeit.timeit(visualization, number = 1)
-	print("Elapsed time: ", round(elapsedTime, 3), "sec.")
+    elapsed_time = timeit.timeit(visualization, number=1)
+    print("Elapsed time: ", round(elapsed_time, 7), "sec.")
+
 
 if __name__ == '__main__':
-	main()
+    main()
