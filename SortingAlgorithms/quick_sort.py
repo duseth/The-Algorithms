@@ -13,30 +13,27 @@ def partition(collection, left, right):
     return j
 
 
-def quickSort(collection, left, right):
-    global counter
-
+def quickSort(collection, left, right, counter):
     if left < right:
         counter += 1
         print("Step %i -->" % counter, collection)
 
         mainstay = partition(collection, left, right)
-        quickSort(collection, left, mainstay - 1)
-        quickSort(collection, mainstay + 1, right)
+        collection, counter = quickSort(collection, left, mainstay - 1, counter)
+        collection, counter = quickSort(collection, mainstay + 1, right, counter)
 
-    return collection
+    return collection, counter
 
 
 def visualization():
-    global counter
+    counter = 0
     length = 10
     collection = [randint(0, length) for _ in range(length)]
 
     print("Initial list:", collection)
     print("Visualization of algorithm work.")
 
-    counter = 0
-    collection = quickSort(collection, 0, length - 1)
+    collection, counter = quickSort(collection, 0, length - 1, counter)
 
     print("Final list:", collection)
     print("Total numbers of passages:", counter)
